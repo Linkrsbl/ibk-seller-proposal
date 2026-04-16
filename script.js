@@ -185,3 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function togglePrivacyDetails() {
+    const details = document.getElementById('privacy-details-content');
+    const chevron = document.getElementById('privacy-chevron');
+    if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        chevron.style.transform = 'rotate(180deg)';
+    } else {
+        details.style.display = 'none';
+        chevron.style.transform = 'rotate(0deg)';
+    }
+}

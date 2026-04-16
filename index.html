@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IBK x 왓섭 제휴 제안</title>
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 </head>
@@ -100,16 +100,24 @@
 
                 <div class="submit-container" id="submit-container">
                     <div class="privacy-consent">
-                        <label class="checkbox-label"
-                            style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
-                            <input type="checkbox" id="privacy-agree" onchange="checkSubmitConditions()">
-                            <span class="consent-text">[필수] 개인정보 수집 및 이용 동의</span>
-                            <span class="custom-checkbox" style="margin-left: auto;"></span>
-                        </label>
-                        <div class="privacy-details">
+                        <div class="privacy-header">
+                            <div class="privacy-title-wrapper" onclick="togglePrivacyDetails()">
+                                <span class="consent-text">[필수] 개인정보 수집 및 이용 동의</span>
+                                <svg id="privacy-chevron" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <label class="checkbox-label" style="width: auto; margin-bottom: 0;">
+                                <input type="checkbox" id="privacy-agree" onchange="checkSubmitConditions()">
+                                <span class="custom-checkbox" style="margin-left: 0; margin-right: 0;"></span>
+                            </label>
+                        </div>
+                        <div class="privacy-details" id="privacy-details-content" style="display: none;">
                             - 수집 목적: 입점 제안 검토 및 결과 안내<br>
                             - 수집 항목: 담당자명, 연락처, 이메일<br>
-                            - 보유 및 이용기간: <strong>검토 완료 후 3개월 즉시 파기</strong>
+                            - 보유 및 이용기간: <strong>서비스 내 입점 검토 완료 후 3개월</strong><br>
+                            (단, 다른 법령에 의해 보유해야 하는 경우 해당 법령에서 지정한 보유기간)<br><br>
+                            개인 정보의 수집 및 이용에 관한 동의는 왓섭 서비스 제휴 문의 이용 시 필수적 사항이므로, 위 사항에 동의하여야 가능합니다. 동의하지 않으시는 경우 왓섭 서비스 제휴 문의 및 그에 따른 추가 업무 진행이 어려울 수 있습니다.
                         </div>
                     </div>
                     <button class="submit-btn" id="submit-btn" onclick="submitForm()" disabled>제휴 의향서 제출하기</button>
