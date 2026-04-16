@@ -121,6 +121,7 @@ async function submitForm() {
         email: document.getElementById('email').value,
         product: document.getElementById('product').value,
         priceRange: priceInput.value.trim(),
+        privacyConsent: 'Y',
         timestamp: new Date().toISOString()
     };
 
