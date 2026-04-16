@@ -369,14 +369,17 @@ body {
 }
 
 .custom-checkbox {
+    display: block;
     width: 20px;
     height: 20px;
     min-width: 20px;
+    min-height: 20px;
     flex-shrink: 0;
     border: 2px solid #D1D5DB;
     border-radius: 4px;
     margin-right: 10px;
     position: relative;
+    background-color: #ffffff;
     transition: all 0.2s;
 }
 
