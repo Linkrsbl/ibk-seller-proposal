@@ -91,7 +91,27 @@
                 <div class="error-msg">필수 입력 항목입니다.</div>
                 
                 <div class="submit-container" id="submit-container">
+                    <div class="privacy-consent">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacy-agree" onchange="checkSubmitConditions()">
+                            <span class="custom-checkbox"></span>
+                            <span class="consent-text">[필수] 개인정보 수집 및 이용 동의</span>
+                        </label>
+                        <div class="privacy-details">
+                            - 수집 목적: 입점 제안 검토 및 결과 안내<br>
+                            - 수집 항목: 담당자명, 연락처, 이메일<br>
+                            - 보유 및 이용기간: <strong>검토 완료 후 3개월 즉시 파기</strong>
+                        </div>
+                    </div>
                     <button class="submit-btn" id="submit-btn" onclick="submitForm()" disabled>제휴 의향서 제출하기</button>
+                    
+                    <div class="guidance-notice">
+                        <strong>[안내 사항]</strong>
+                        <ol>
+                            <li>본 의향서는 IBK 카드 앱 쇼핑몰 입점 검토를 위한 기초 자료로 활용됩니다.</li>
+                            <li>기입해주신 정보는 순차적으로 대조 후 연락을 드릴 예정입니다.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
