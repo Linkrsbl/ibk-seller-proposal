@@ -371,6 +371,8 @@ body {
 .custom-checkbox {
     width: 20px;
     height: 20px;
+    min-width: 20px;
+    flex-shrink: 0;
     border: 2px solid #D1D5DB;
     border-radius: 4px;
     margin-right: 10px;
