@@ -33,15 +33,17 @@
                 당사 고객들의 명확한 니즈를 타겟하세요.
             </p>
 
-            <button class="next-btn fade-up-5" onclick="startForm()">다음을 눌러 입점 / 제휴하기 ➔</button>
+            <button class="next-btn fade-up-5" onclick="startForm()">입점 / 제휴하기 ➔</button>
         </div>
 
         <div id="form-container" class="form-container">
             <!-- Step: Company -->
             <div class="step form-step" id="step-company">
                 <div class="input-wrapper">
-                    <input type="text" id="company" placeholder="1. 회사명 또는 브랜드명" onkeydown="handleEnter(event, 'step-contact')">
-                    <button class="inline-next-btn" onclick="nextStep('step-company', 'step-contact')" aria-label="다음">➔</button>
+                    <input type="text" id="company" placeholder="1. 회사명 또는 브랜드명"
+                        onkeydown="handleEnter(event, 'step-contact')">
+                    <button class="inline-next-btn" onclick="nextStep('step-company', 'step-contact')"
+                        aria-label="다음">➔</button>
                 </div>
                 <div class="error-msg">필수 입력 항목입니다.</div>
             </div>
@@ -49,8 +51,10 @@
             <!-- Step: Contact Name -->
             <div class="step form-step" id="step-contact">
                 <div class="input-wrapper">
-                    <input type="text" id="contact-name" placeholder="2. 담당자 성함과 직급" onkeydown="handleEnter(event, 'step-phone')">
-                    <button class="inline-next-btn" onclick="nextStep('step-contact', 'step-phone')" aria-label="다음">➔</button>
+                    <input type="text" id="contact-name" placeholder="2. 담당자 성함과 직급"
+                        onkeydown="handleEnter(event, 'step-phone')">
+                    <button class="inline-next-btn" onclick="nextStep('step-contact', 'step-phone')"
+                        aria-label="다음">➔</button>
                 </div>
                 <div class="error-msg">필수 입력 항목입니다.</div>
             </div>
@@ -59,7 +63,8 @@
             <div class="step form-step" id="step-phone">
                 <div class="input-wrapper">
                     <input type="tel" id="phone" placeholder="3. 연락처" onkeydown="handleEnter(event, 'step-email')">
-                    <button class="inline-next-btn" onclick="nextStep('step-phone', 'step-email')" aria-label="다음">➔</button>
+                    <button class="inline-next-btn" onclick="nextStep('step-phone', 'step-email')"
+                        aria-label="다음">➔</button>
                 </div>
                 <div class="error-msg">필수 입력 항목입니다.</div>
             </div>
@@ -68,7 +73,8 @@
             <div class="step form-step" id="step-email">
                 <div class="input-wrapper">
                     <input type="email" id="email" placeholder="4. 이메일" onkeydown="handleEnter(event, 'step-product')">
-                    <button class="inline-next-btn" onclick="nextStep('step-email', 'step-product')" aria-label="다음">➔</button>
+                    <button class="inline-next-btn" onclick="nextStep('step-email', 'step-product')"
+                        aria-label="다음">➔</button>
                 </div>
                 <div class="error-msg">유효한 이메일을 입력해주세요.</div>
             </div>
@@ -85,14 +91,17 @@
             <!-- Step: Price Range -->
             <div class="step form-step" id="step-price">
                 <div class="input-wrapper">
-                    <input type="text" id="price-range" placeholder="6. 주요 상품 가격대는 어떻게 되나요?" onkeydown="handleEnter(event, null)">
-                    <button class="inline-next-btn" onclick="nextStep('step-price', null); enableSubmit();" aria-label="완료">✓</button>
+                    <input type="text" id="price-range" placeholder="6. 주요 상품 가격대는 어떻게 되나요?"
+                        onkeydown="handleEnter(event, null)">
+                    <button class="inline-next-btn" onclick="nextStep('step-price', null); enableSubmit();"
+                        aria-label="완료">✓</button>
                 </div>
                 <div class="error-msg">필수 입력 항목입니다.</div>
-                
+
                 <div class="submit-container" id="submit-container">
                     <div class="privacy-consent">
-                        <label class="checkbox-label" style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                        <label class="checkbox-label"
+                            style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
                             <input type="checkbox" id="privacy-agree" onchange="checkSubmitConditions()">
                             <span class="consent-text">[필수] 개인정보 수집 및 이용 동의</span>
                             <span class="custom-checkbox" style="margin-left: auto;"></span>
@@ -104,7 +113,7 @@
                         </div>
                     </div>
                     <button class="submit-btn" id="submit-btn" onclick="submitForm()" disabled>제휴 의향서 제출하기</button>
-                    
+
                     <div class="guidance-notice">
                         <strong>[안내 사항]</strong>
                         <ol>
