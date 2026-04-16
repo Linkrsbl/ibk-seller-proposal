@@ -369,7 +369,7 @@ body {
 }
 
 .custom-checkbox {
-    display: block;
+    display: inline-block;
     width: 20px;
     height: 20px;
     min-width: 20px;
@@ -381,6 +381,7 @@ body {
     position: relative;
     background-color: #ffffff;
     transition: all 0.2s;
+    vertical-align: middle;
 }
 
 .checkbox-label input:checked + .custom-checkbox {
