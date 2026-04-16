@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBK x 왓섭 제휴 제안</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+</head>
+
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="logo">IBK기업은행 x 왓섭</div>
+        </header>
+
+        <!-- Intro Text -->
+        <div class="step intro-step active" id="step-intro">
+            <div class="hero-image-wrapper fade-up-1">
+                <img src="images/hero-ty2.png" alt="Hero Image">
+            </div>
+            <h2 class="fade-up-2">협업을 제안드립니다.</h2>
+            <p class="fade-up-3">
+                134만명의 회원과 월 1억 건의 결제,<br>
+                생활 속 정기 지출을 똑똑하게 관리하고<br>
+                상품을 추천하는 <strong>생활밀착형 커머스 몰</strong>을 새롭게 선보입니다.<br><br>
+            </p>
+            <p class="fade-up-4">
+                무조건 소비를 줄이는 것이 아니라<br>
+                <strong>'어차피 써야 하는 지출을 더 스마트하게 최적화'</strong>하려는<br>
+                당사 고객들의 명확한 니즈를 타겟하세요.
+            </p>
+
+            <button class="next-btn fade-up-5" onclick="startForm()">다음을 눌러 입점 / 제휴하기 ➔</button>
+        </div>
+
+        <div id="form-container" class="form-container">
+            <!-- Step: Company -->
+            <div class="step form-step" id="step-company">
+                <div class="input-wrapper">
+                    <input type="text" id="company" placeholder="1. 회사명 또는 브랜드명" onkeydown="handleEnter(event, 'step-contact')">
+                    <button class="inline-next-btn" onclick="nextStep('step-company', 'step-contact')" aria-label="다음">➔</button>
+                </div>
+                <div class="error-msg">필수 입력 항목입니다.</div>
+            </div>
+
+            <!-- Step: Contact Name -->
+            <div class="step form-step" id="step-contact">
+                <div class="input-wrapper">
+                    <input type="text" id="contact-name" placeholder="2. 담당자 성함과 직급" onkeydown="handleEnter(event, 'step-phone')">
+                    <button class="inline-next-btn" onclick="nextStep('step-contact', 'step-phone')" aria-label="다음">➔</button>
+                </div>
+                <div class="error-msg">필수 입력 항목입니다.</div>
+            </div>
+
+            <!-- Step: Phone -->
+            <div class="step form-step" id="step-phone">
+                <div class="input-wrapper">
+                    <input type="tel" id="phone" placeholder="3. 연락처" onkeydown="handleEnter(event, 'step-email')">
+                    <button class="inline-next-btn" onclick="nextStep('step-phone', 'step-email')" aria-label="다음">➔</button>
+                </div>
+                <div class="error-msg">필수 입력 항목입니다.</div>
+            </div>
+
+            <!-- Step: Email -->
+            <div class="step form-step" id="step-email">
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="4. 이메일" onkeydown="handleEnter(event, 'step-product')">
+                    <button class="inline-next-btn" onclick="nextStep('step-email', 'step-product')" aria-label="다음">➔</button>
+                </div>
+                <div class="error-msg">유효한 이메일을 입력해주세요.</div>
+            </div>
+
+            <!-- Step: Product -->
+            <div class="step form-step" id="step-product">
+                <div class="input-wrapper">
+                    <textarea id="product" rows="3" placeholder="5. 주요 상품 및 브랜드 설명 (상품명, 구성, 중량, 수량 등 기재)"></textarea>
+                </div>
+                <div class="error-msg">필수 입력 항목입니다.</div>
+                <button class="next-btn small" onclick="nextStep('step-product', 'step-price')">다음 ➔</button>
+            </div>
+
+            <!-- Step: Price Range -->
+            <div class="step form-step" id="step-price">
+                <div class="input-wrapper">
+                    <input type="text" id="price-range" placeholder="6. 주요 상품 가격대는 어떻게 되나요?" onkeydown="handleEnter(event, null)">
+                    <button class="inline-next-btn" onclick="nextStep('step-price', null); enableSubmit();" aria-label="완료">✓</button>
+                </div>
+                <div class="error-msg">필수 입력 항목입니다.</div>
+                
+                <div class="submit-container" id="submit-container">
+                    <button class="submit-btn" id="submit-btn" onclick="submitForm()" disabled>제휴 의향서 제출하기</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Screen -->
+        <div id="success-screen" class="success-screen">
+            <div class="success-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
+                    <path d="M20 6L9 17l-5-5" />
+                </svg>
+            </div>
+            <h2>제출이 완료되었습니다</h2>
+            <p>소중한 제안에 감사드립니다.<br>꼼꼼히 확인 후 빠르게 연락드리겠습니다.</p>
+        </div>
+    </div>
+
+    <!-- Spacer to allow scrolling on mobile -->
+    <div style="height: 50vh;"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
