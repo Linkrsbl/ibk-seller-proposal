@@ -76,18 +76,30 @@ function nextStep(currentStepId, nextStepId) {
 
 function enableSubmit() {
     const input = document.getElementById('price-range');
-    const submitBtn = document.getElementById('submit-btn');
     const submitContainer = document.getElementById('submit-container');
     const errorMsg = document.getElementById('step-price').querySelector('.error-msg');
     
     if (input.value.trim()) {
         submitContainer.classList.add('active');
-        submitBtn.disabled = false;
         if(errorMsg) errorMsg.style.display = 'none';
         
+        checkSubmitConditions();
+        
         setTimeout(() => {
-            submitContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            submitContainer.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }, 100);
+    }
+}
+
+function checkSubmitConditions() {
+    const priceInput = document.getElementById('price-range');
+    const privacyCheckbox = document.getElementById('privacy-agree');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    if (priceInput.value.trim() && privacyCheckbox && privacyCheckbox.checked) {
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
     }
 }
 
