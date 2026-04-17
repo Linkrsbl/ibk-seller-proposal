@@ -40,7 +40,7 @@
             <!-- Step: Company -->
             <div class="step form-step" id="step-company">
                 <div class="input-wrapper">
-                    <input type="text" id="company" placeholder="1. 회사명 또는 브랜드명"
+                    <input type="text" id="company" placeholder="1. 회사명 또는 브랜드명 *"
                         onkeydown="handleEnter(event, 'step-contact')">
                     <button class="inline-next-btn" onclick="nextStep('step-company', 'step-contact')"
                         aria-label="다음">➔</button>
@@ -51,7 +51,7 @@
             <!-- Step: Contact Name -->
             <div class="step form-step" id="step-contact">
                 <div class="input-wrapper">
-                    <input type="text" id="contact-name" placeholder="2. 담당자 성함과 직급"
+                    <input type="text" id="contact-name" placeholder="2. 담당자 성함과 직급 *"
                         onkeydown="handleEnter(event, 'step-phone')">
                     <button class="inline-next-btn" onclick="nextStep('step-contact', 'step-phone')"
                         aria-label="다음">➔</button>
@@ -62,7 +62,7 @@
             <!-- Step: Phone -->
             <div class="step form-step" id="step-phone">
                 <div class="input-wrapper">
-                    <input type="tel" id="phone" placeholder="3. 연락처" onkeydown="handleEnter(event, 'step-email')">
+                    <input type="tel" id="phone" placeholder="3. 연락처 *" onkeydown="handleEnter(event, 'step-email')">
                     <button class="inline-next-btn" onclick="nextStep('step-phone', 'step-email')"
                         aria-label="다음">➔</button>
                 </div>
@@ -72,7 +72,7 @@
             <!-- Step: Email -->
             <div class="step form-step" id="step-email">
                 <div class="input-wrapper">
-                    <input type="email" id="email" placeholder="4. 이메일" onkeydown="handleEnter(event, 'step-product')">
+                    <input type="email" id="email" placeholder="4. 이메일 *" onkeydown="handleEnter(event, 'step-product')">
                     <button class="inline-next-btn" onclick="nextStep('step-email', 'step-product')"
                         aria-label="다음">➔</button>
                 </div>
@@ -82,7 +82,7 @@
             <!-- Step: Product -->
             <div class="step form-step" id="step-product">
                 <div class="input-wrapper">
-                    <textarea id="product" rows="3" placeholder="5. 주요 상품 및 브랜드 설명 (상품명, 구성, 중량, 수량 등 기재)"></textarea>
+                    <textarea id="product" rows="3" placeholder="5. 주요 상품 및 브랜드 설명 * (상품명, 구성, 중량, 수량 등 기재)"></textarea>
                 </div>
                 <div class="error-msg">필수 입력 항목입니다.</div>
                 <button class="next-btn small" onclick="nextStep('step-product', 'step-price')">다음 ➔</button>
@@ -91,7 +91,7 @@
             <!-- Step: Price Range -->
             <div class="step form-step" id="step-price">
                 <div class="input-wrapper">
-                    <input type="text" id="price-range" placeholder="6. 주요 상품 가격대는 어떻게 되나요?"
+                    <input type="text" id="price-range" placeholder="6. 주요 상품 가격대는 어떻게 되나요? *"
                         onkeydown="handleEnter(event, null)">
                     <button class="inline-next-btn" onclick="nextStep('step-price', null); enableSubmit();"
                         aria-label="완료">✓</button>
