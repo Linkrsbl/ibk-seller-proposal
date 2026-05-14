@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시장 분석 슬라이드</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        :root {
+            --ink: #101828;
+            --body: #344054;
+            --muted: #667085;
+            --blue: #2563EB;
+            --blue-strong: #1D4ED8;
+            --blue-soft: #EFF6FF;
+            --navy: #172554;
+            --green-soft: #ECFDF3;
+            --yellow-soft: #FFFAEB;
+            --purple-soft: #F4F3FF;
+            --line: #E4E7EC;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: var(--ink);
+        }
+
+        .slide {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            padding: 64px 96px 42px;
+            background:
+                radial-gradient(circle at 90% 12%, rgba(37, 99, 235, 0.13), transparent 26%),
+                radial-gradient(circle at 8% 92%, rgba(14, 165, 233, 0.10), transparent 30%),
+                linear-gradient(180deg, #FFFFFF 0%, #F6F9FE 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: linear-gradient(135deg, rgba(0,0,0,0.72), transparent 58%);
+        }
+
+        .copy,
+        .target-market,
+        .sources {
+            position: relative;
+            z-index: 1;
+        }
+
+        .copy {
+            width: 1680px;
+            padding-left: 28px;
+            border-left: 8px solid #5A6DFF;
+        }
+
+        .eyebrow {
+            display: block;
+            margin: 0 0 14px;
+            color: var(--blue-strong);
+            font-size: 24px;
+            line-height: 1;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            margin: 0;
+            color: #000000;
+            font-size: 52px;
+            line-height: 1.16;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        h1 strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+
+        .lead {
+            width: 1580px;
+            margin: 20px 0 0;
+            color: #3B4656;
+            font-size: 28px;
+            line-height: 1.42;
+            font-weight: 850;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .lead strong {
+            color: #4F63FF;
+            font-weight: 950;
+        }
+
+        .target-market {
+            display: grid;
+            grid-template-columns: 1fr 92px 0.58fr;
+            gap: 28px;
+            margin-top: 46px;
+            align-items: center;
+        }
+
+        .market-card {
+            min-height: 500px;
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 24px 70px rgba(16, 24, 40, 0.09);
+        }
+
+        .market-card h2,
+        .summary-card h2 {
+            margin: 0;
+            color: var(--ink);
+            font-size: 32px;
+            line-height: 1.22;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .pool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .pool {
+            min-height: 204px;
+            padding: 24px;
+            border-radius: 26px;
+            border: 1px solid #DCE8FF;
+            background: #F8FAFF;
+        }
+
+        .pool:nth-child(2) {
+            background: var(--green-soft);
+            border-color: #CDEEDB;
+        }
+
+        .pool:nth-child(3) {
+            background: var(--yellow-soft);
+            border-color: #F8E6BA;
+        }
+
+        .pool:nth-child(4) {
+            background: var(--purple-soft);
+            border-color: #DAD4FE;
+        }
+
+        .pool-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            background: rgba(255,255,255,0.86);
+            font-size: 30px;
+        }
+
+        .pool h3 {
+            margin: 18px 0 0;
+            color: var(--ink);
+            font-size: 26px;
+            line-height: 1.22;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        .pool strong {
+            display: block;
+            margin-top: 12px;
+            color: var(--blue-strong);
+            font-size: 40px;
+            line-height: 1.06;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        .pool p {
+            margin: 9px 0 0;
+            color: var(--body);
+            font-size: 18px;
+            line-height: 1.36;
+            font-weight: 750;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .summary-card {
+            min-height: 560px;
+            padding: 38px;
+            border: 1px solid var(--line);
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.94);
+            color: var(--ink);
+            box-shadow: 0 24px 70px rgba(16, 24, 40, 0.09);
+        }
+
+        .summary-card h2 {
+            color: var(--ink);
+        }
+
+        .target-number {
+            margin-top: 34px;
+            padding: 34px;
+            border-radius: 28px;
+            background:
+                linear-gradient(180deg, #F8FAFF 0%, #EEF5FF 100%);
+            border: 1px solid #D6E4FF;
+        }
+
+        .target-number span {
+            display: block;
+            color: var(--blue-strong);
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0;
+        }
+
+        .target-number strong {
+            display: block;
+            margin-top: 18px;
+            color: var(--blue-strong);
+            font-size: 90px;
+            line-height: 0.98;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        .target-number small {
+            display: block;
+            margin-top: 20px;
+            color: var(--body);
+            font-size: 22px;
+            line-height: 1.42;
+            font-weight: 820;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .merge-arrow {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+        }
+
+        .merge-arrow span {
+            width: 84px;
+            height: 84px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #D6E4FF;
+            box-shadow: 0 18px 48px rgba(37, 99, 235, 0.15);
+            font-size: 44px;
+            font-weight: 950;
+        }
+
+        .ibk-note {
+            margin-top: 30px;
+            padding: 22px;
+            border-radius: 22px;
+            color: var(--body);
+            background: #F8FAFF;
+            border: 1px solid #D6E4FF;
+            font-size: 23px;
+            line-height: 1.42;
+            font-weight: 850;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .ibk-note strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+
+        .sources {
+            margin-top: 18px;
+            color: #8A94A6;
+            font-size: 15px;
+            line-height: 1.36;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="slide" aria-label="시장 분석 슬라이드">
+        <section class="copy">
+            <span class="eyebrow">시장 분석</span>
+            <h1><strong>반복되는 생활 지출</strong>이 모이는 곳에 새로운 구매 기회가 있습니다</h1>
+            <p class="lead">
+                구독, 생활제품, 렌탈, 정기지출은 모두 고객이 주기적으로 비용을 쓰는 영역입니다.
+                IBK 구독몰은 이 반복 소비 흐름을 연결해 <strong>생활 밀착형 구매 수요</strong>를 만듭니다.
+            </p>
+        </section>
+
+        <section class="target-market" aria-label="타겟 시장 규모">
+            <article class="market-card">
+                <h2>타겟 시장을 구성하는 4개 수요 풀</h2>
+                <div class="pool-grid">
+                    <div class="pool">
+                        <div class="pool-icon">🔁</div>
+                        <h3>구독 서비스</h3>
+                        <strong>약 100조원</strong>
+                        <p>콘텐츠, 멤버십, 정기배송</p>
+                    </div>
+                    <div class="pool">
+                        <div class="pool-icon">🧺</div>
+                        <h3>생활제품 온라인</h3>
+                        <strong>약 74조원</strong>
+                        <p>식품, 생필품, 반복 구매 상품</p>
+                    </div>
+                    <div class="pool">
+                        <div class="pool-icon">🏠</div>
+                        <h3>렌탈 / 정기 이용</h3>
+                        <strong>100조원대</strong>
+                        <p>가전, 자동차, 생활 렌탈</p>
+                    </div>
+                    <div class="pool">
+                        <div class="pool-icon">💳</div>
+                        <h3>생활 정기지출</h3>
+                        <strong>약 240조원+</strong>
+                        <p>통신, 주거, 식료품, 고정비</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="merge-arrow" aria-hidden="true">
+                <span>→</span>
+            </div>
+
+            <aside class="summary-card">
+                <h2>공략 가능한 생활지출 접점</h2>
+                <div class="target-number">
+                    <span>전체 타겟 시장</span>
+                    <strong>500조원+</strong>
+                    <small>
+                        네 개 수요 풀은 고객의 반복 지출이라는 공통 맥락 안에서 하나의 시장으로 연결됩니다.
+                    </small>
+                </div>
+                <p class="ibk-note">
+                    <strong>IBK 구독몰의 기회</strong>는 이 시장을 고객의 카드 앱 지출 맥락 안에서 자연스럽게 제안하는 데 있습니다.
+                </p>
+            </aside>
+        </section>
+
+        <p class="sources">
+            출처: KT경제경영연구소 구독경제·렌탈 시장 전망 보도, 국가데이터처 온라인쇼핑동향,
+            2025년 연간 지출 가계동향. 생활 정기지출 및 합산 규모는 공개 통계 기반 자체 추정.
+        </p>
+    </main>
+</body>
+
+</html>

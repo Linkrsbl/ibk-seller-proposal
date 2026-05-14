@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적합 카테고리 슬라이드</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        :root {
+            --ink: #101828;
+            --body: #344054;
+            --muted: #667085;
+            --blue: #2563EB;
+            --blue-strong: #1D4ED8;
+            --blue-soft: #EFF6FF;
+            --green-soft: #ECFDF3;
+            --yellow-soft: #FFFAEB;
+            --rose-soft: #FFF1F3;
+            --purple-soft: #F4F3FF;
+            --line: #E4E7EC;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: var(--ink);
+        }
+
+        .slide {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            padding: 72px 96px 58px;
+            background:
+                radial-gradient(circle at 90% 12%, rgba(37, 99, 235, 0.13), transparent 26%),
+                radial-gradient(circle at 8% 92%, rgba(14, 165, 233, 0.11), transparent 30%),
+                linear-gradient(180deg, #FFFFFF 0%, #F6F9FE 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: linear-gradient(135deg, rgba(0,0,0,0.70), transparent 58%);
+        }
+
+        .copy,
+        .category-grid,
+        .bottom-note {
+            position: relative;
+            z-index: 1;
+        }
+
+        .copy {
+            width: 1680px;
+            padding-left: 28px;
+            border-left: 8px solid #5A6DFF;
+        }
+
+        h1 {
+            margin: 0;
+            color: #000000;
+            font-size: 60px;
+            line-height: 1.16;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        h1 strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+
+        .lead {
+            width: 1560px;
+            margin: 24px 0 0;
+            color: #3B4656;
+            font-size: 31px;
+            line-height: 1.44;
+            font-weight: 850;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .lead strong {
+            color: #4F63FF;
+            font-weight: 950;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            margin-top: 56px;
+        }
+
+        .category-card {
+            min-height: 242px;
+            padding: 28px;
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 22px 62px rgba(16, 24, 40, 0.08);
+        }
+
+        .icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            color: var(--blue-strong);
+            background: var(--blue-soft);
+            font-size: 30px;
+            font-weight: 950;
+        }
+
+        .category-card:nth-child(2) .icon,
+        .category-card:nth-child(6) .icon {
+            background: var(--green-soft);
+            color: #047857;
+        }
+
+        .category-card:nth-child(3) .icon,
+        .category-card:nth-child(7) .icon {
+            background: var(--yellow-soft);
+            color: #B45309;
+        }
+
+        .category-card:nth-child(4) .icon,
+        .category-card:nth-child(8) .icon {
+            background: var(--purple-soft);
+            color: #5B21B6;
+        }
+
+        .category-card:nth-child(5) .icon {
+            background: var(--rose-soft);
+            color: #BE123C;
+        }
+
+        .category-card h2 {
+            margin: 24px 0 0;
+            color: var(--ink);
+            font-size: 29px;
+            line-height: 1.22;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .category-card p {
+            margin: 14px 0 0;
+            color: var(--body);
+            font-size: 21px;
+            line-height: 1.42;
+            font-weight: 700;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .bottom-note {
+            width: 1240px;
+            margin: 44px auto 0;
+            padding: 20px 30px;
+            border-radius: 999px;
+            color: #344054;
+            background: rgba(255,255,255,0.88);
+            border: 1px solid var(--line);
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.42;
+            font-weight: 850;
+            box-shadow: 0 16px 44px rgba(16, 24, 40, 0.07);
+        }
+
+        .bottom-note strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="slide" aria-label="적합 카테고리 슬라이드">
+        <section class="copy">
+            <h1><strong>반복 소비와 생활 밀착성</strong>이 높은 상품일수록 잘 맞습니다</h1>
+            <p class="lead">
+                IBK 구독몰은 고객의 정기지출 흐름과 소비 패턴을 기반으로 상품을 제안합니다.
+                따라서 매월 쓰거나, 주기적으로 교체하거나, 생활 속에서 반복 구매되는 상품일수록 자연스럽게 연결됩니다.
+            </p>
+        </section>
+
+        <section class="category-grid" aria-label="입점 적합 카테고리">
+            <article class="category-card">
+                <div class="icon">🥗</div>
+                <h2>식음료 정기배송</h2>
+                <p>생수, 커피, 간편식, 건강식품처럼 주기적으로 재구매되는 상품</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">🧴</div>
+                <h2>생활소비재</h2>
+                <p>세제, 휴지, 샴푸, 칫솔, 면도용품 등 반복 사용되는 필수 소비재</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">💪</div>
+                <h2>헬스 / 웰니스</h2>
+                <p>영양제, 운동용품, 다이어트 식품, 수면·건강관리 상품</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">🐾</div>
+                <h2>반려동물</h2>
+                <p>사료, 간식, 배변용품, 정기 케어처럼 반복 구매가 뚜렷한 상품</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">📚</div>
+                <h2>교육 / 자기계발</h2>
+                <p>온라인 강의, 학습지, 어학, 독서 서비스처럼 지속 이용되는 상품</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">🎧</div>
+                <h2>디지털 / 콘텐츠</h2>
+                <p>OTT, 음악, 클라우드, 소프트웨어 구독 등 디지털 반복 결제 상품</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">📱</div>
+                <h2>통신 / 생활 서비스</h2>
+                <p>알뜰폰, 인터넷, 렌탈, 홈케어처럼 생활 지출과 연결되는 서비스</p>
+            </article>
+            <article class="category-card">
+                <div class="icon">🎟️</div>
+                <h2>멤버십 / 쿠폰</h2>
+                <p>카페, 편의점, 쇼핑, 여행, 외식 쿠폰처럼 자주 쓰는 혜택 상품</p>
+            </article>
+        </section>
+
+        <p class="bottom-note">
+            정기적으로 쓰는 상품일수록, 고객이 지출을 점검하는 순간 <strong>더 자연스럽게 제안</strong>될 수 있습니다.
+        </p>
+    </main>
+</body>
+
+</html>

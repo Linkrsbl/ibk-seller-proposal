@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제휴 문의 슬라이드</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        :root {
+            --ink: #101828;
+            --body: #475467;
+            --blue: #2563EB;
+            --blue-strong: #1D4ED8;
+            --blue-soft: #EFF6FF;
+            --line: #E4E7EC;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: var(--ink);
+        }
+
+        .slide {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            padding: 96px;
+            background:
+                radial-gradient(circle at 92% 12%, rgba(37, 99, 235, 0.16), transparent 28%),
+                radial-gradient(circle at 6% 92%, rgba(14, 165, 233, 0.12), transparent 32%),
+                linear-gradient(180deg, #FFFFFF 0%, #F6F9FE 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: linear-gradient(135deg, rgba(0,0,0,0.72), transparent 58%);
+        }
+
+        .layout {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) 520px;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .copy {
+            padding-left: 28px;
+            border-left: 8px solid #5A6DFF;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 26px;
+            color: var(--blue);
+            font-size: 26px;
+            line-height: 1;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        h1 {
+            width: 1120px;
+            margin: 0;
+            color: #000000;
+            font-size: 76px;
+            line-height: 1.14;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        h1 strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+
+        .description {
+            width: 1060px;
+            margin: 32px 0 0;
+            color: #344054;
+            font-size: 32px;
+            line-height: 1.5;
+            font-weight: 800;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 58px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 250px;
+            height: 72px;
+            padding: 0 34px;
+            border-radius: 14px;
+            color: #FFFFFF;
+            background: var(--blue);
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: 950;
+            letter-spacing: 0;
+            box-shadow: 0 18px 44px rgba(37, 99, 235, 0.28);
+        }
+
+        .hint {
+            color: var(--body);
+            font-size: 22px;
+            line-height: 1.35;
+            font-weight: 700;
+        }
+
+        .contact-card {
+            position: relative;
+            min-height: 650px;
+            padding: 38px;
+            border-radius: 32px;
+            background: rgba(255,255,255,0.92);
+            border: 1px solid var(--line);
+            box-shadow: 0 28px 80px rgba(16, 24, 40, 0.12);
+        }
+
+        .profile {
+            width: 240px;
+            height: 240px;
+            display: block;
+            margin: 0 auto 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #FFFFFF;
+            box-shadow: 0 18px 46px rgba(16, 24, 40, 0.16);
+        }
+
+        .contact-card span {
+            display: block;
+            color: var(--blue);
+            text-align: center;
+            font-size: 21px;
+            font-weight: 950;
+        }
+
+        .contact-card h2 {
+            margin: 16px 0 0;
+            color: #000000;
+            text-align: center;
+            font-size: 42px;
+            line-height: 1.2;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            padding: 22px 24px;
+            border-radius: 18px;
+            background: #F8FAFF;
+            border: 1px solid #D6E4FF;
+        }
+
+        .contact-item small {
+            display: block;
+            color: var(--body);
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-top: 8px;
+            color: var(--ink);
+            font-size: 25px;
+            line-height: 1.25;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        .export-hidden {
+            visibility: hidden;
+        }
+
+        .footer {
+            position: absolute;
+            left: 96px;
+            right: 96px;
+            bottom: 42px;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            color: #98A2B3;
+            font-size: 20px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="slide" aria-label="제휴 문의 슬라이드">
+        <section class="layout">
+            <div class="copy">
+                <span class="label">제휴 문의</span>
+                <h1>IBK 구독몰과 함께할<br><strong>입점 파트너</strong>를 기다립니다</h1>
+                <p class="description">
+                    상품 입점, 운영 연동, 제휴 조건이 궁금하시다면 편하게 문의해주세요.
+                    고객의 소비 맥락 안에서 브랜드가 필요한 순간에 제안될 수 있도록 함께 준비하겠습니다.
+                </p>
+                <div class="actions">
+                    <a class="cta" href="../index.html">입점 신청하기</a>
+                    <p class="hint">버튼을 누르면 입점/제휴 문의 폼으로 이동합니다.</p>
+                </div>
+            </div>
+
+            <aside class="contact-card">
+                <img class="profile" src="assets/sangbin-profile.png" alt="이상빈 프로필 캐릭터">
+                <span class="export-hidden">Partnership Contact</span>
+                <h2 class="export-hidden">이상빈 PO</h2>
+                <div class="contact-list">
+                    <div class="contact-item export-hidden">
+                        <small>이메일</small>
+                        <strong>sangbin.lee@whatssub.co</strong>
+                    </div>
+                    <div class="contact-item">
+                        <small>문의 분야</small>
+                        <strong>입점 제휴 · 상품 운영 · 구독몰 협업</strong>
+                    </div>
+                </div>
+            </aside>
+        </section>
+        <footer class="footer">
+            <span>IBK 구독몰 제휴 제안</span>
+            <span>08 / 08</span>
+        </footer>
+    </main>
+</body>
+
+</html>

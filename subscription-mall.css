@@ -1,0 +1,179 @@
+:root {
+    --deck-bg: #DDE3EC;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background: var(--deck-bg);
+}
+
+body {
+    overflow: hidden;
+}
+
+.deck {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.slide-shell {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.slide-link {
+    display: block;
+    flex: 0 0 auto;
+    width: 1920px;
+    height: 1080px;
+    transform: scale(var(--deck-scale, 1));
+    transform-origin: center;
+}
+
+.slide-composite {
+    position: relative;
+    flex: 0 0 auto;
+    width: 1920px;
+    height: 1080px;
+    transform: scale(var(--deck-scale, 1));
+    transform-origin: center;
+}
+
+.slide-image {
+    width: 1920px;
+    height: 1080px;
+    display: block;
+    object-fit: contain;
+    box-shadow: 0 28px 80px rgba(16, 24, 40, 0.18);
+}
+
+.slide-shell > .slide-image {
+    flex: 0 0 auto;
+    transform: scale(var(--deck-scale, 1));
+    transform-origin: center;
+}
+
+.slide-composite .slide-image {
+    position: absolute;
+    inset: 0;
+}
+
+.contact-copy {
+    position: absolute;
+    left: 1399px;
+    top: 502px;
+    z-index: 2;
+    width: 330px;
+    color: #000000;
+    font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+    text-align: center;
+    user-select: text;
+}
+
+.contact-copy span {
+    display: block;
+    color: #2563EB;
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 950;
+}
+
+.contact-copy strong {
+    display: block;
+    margin-top: 18px;
+    font-size: 45px;
+    line-height: 1.2;
+    font-weight: 950;
+    letter-spacing: 0;
+}
+
+.contact-email {
+    margin-top: 50px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.contact-email small {
+    display: block;
+    color: #475467;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.contact-email span {
+    display: block;
+    margin-top: 10px;
+    color: #000000;
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 950;
+    letter-spacing: 0;
+}
+
+.apply-hotspot {
+    position: absolute;
+    left: 132px;
+    top: 710px;
+    z-index: 2;
+    width: 250px;
+    height: 72px;
+    overflow: hidden;
+    color: transparent;
+    text-decoration: none;
+    border-radius: 14px;
+}
+
+.deck-nav {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.deck-nav-button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    color: #FFFFFF;
+    background: rgba(17, 17, 17, 0.72);
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 0.18s ease, opacity 0.18s ease;
+}
+
+.deck-nav-button:hover {
+    background: rgba(22, 115, 255, 0.88);
+}
+
+.deck-nav-button:disabled {
+    opacity: 0.34;
+    cursor: default;
+}
+
+@media (max-width: 900px) {
+    .deck-nav {
+        display: none;
+    }
+}

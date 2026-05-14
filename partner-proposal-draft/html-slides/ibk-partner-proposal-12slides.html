@@ -1,0 +1,2613 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>금융사 앱 구독 커머스 입점/제휴 제안서 10장 초안</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        :root {
+            --ink: #172033;
+            --body: #4B5563;
+            --muted: #6B7280;
+            --blue: #2F63D7;
+            --blue-strong: #214A9A;
+            --blue-soft: #EAF1FF;
+            --cyan-soft: #EAF8FA;
+            --green-soft: #ECF8F1;
+            --yellow-soft: #FFF6E3;
+            --gray-soft: #F6F8FB;
+            --line: #D8DEE8;
+            --white: #FFFFFF;
+            --slide-scale: 1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: #dfe4ec;
+            color: var(--ink);
+            font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            min-height: 100%;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .deck {
+            display: block;
+        }
+
+        .slide-frame {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            height: 100svh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .slide {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            padding: 56px 78px 48px;
+            background:
+                linear-gradient(180deg, #FFFFFF 0%, #F7F9FD 100%);
+            box-shadow: 0 22px 60px rgba(23, 32, 51, 0.18);
+            transform: translate(-50%, -50%) scale(var(--slide-scale));
+            transform-origin: center center;
+        }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 100%;
+            background: var(--blue);
+        }
+
+        .slide::after {
+            content: "";
+            position: absolute;
+            right: 78px;
+            top: 58px;
+            z-index: 3;
+            width: 150px;
+            height: 42px;
+            background: url("./whatsub-logo.png") no-repeat right center / contain;
+            pointer-events: none;
+        }
+
+        .slide-header {
+            position: relative;
+            z-index: 1;
+            min-height: 146px;
+            padding-left: 26px;
+            border-left: 6px solid var(--blue);
+        }
+
+        .kicker {
+            margin: 0 0 12px;
+            color: var(--blue-strong);
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 850;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--ink);
+            font-size: 48px;
+            line-height: 1.14;
+            font-weight: 900;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .desc {
+            width: 1500px;
+            margin: 14px 0 0;
+            color: var(--body);
+            font-size: 24px;
+            line-height: 1.42;
+            font-weight: 650;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 802px;
+            margin-top: 28px;
+        }
+
+        .slide:nth-of-type(n+3) .content {
+            padding-top: 120px;
+        }
+
+        .slide-frame:nth-of-type(n+3) .content {
+            padding-top: 120px;
+        }
+
+        .footer {
+            position: absolute;
+            left: 78px;
+            right: 78px;
+            bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            color: #8B95A5;
+            font-size: 15px;
+            font-weight: 650;
+        }
+
+        .cover {
+            background: #FFFFFF;
+        }
+
+        .cover .slide-header {
+            display: none;
+        }
+
+        .cover-title {
+            width: 1180px;
+            margin-top: 245px;
+            color: var(--ink);
+            font-size: 76px;
+            line-height: 1.12;
+            font-weight: 920;
+            word-break: keep-all;
+        }
+
+        .cover-copy {
+            width: 1120px;
+            margin-top: 34px;
+            color: var(--body);
+            font-size: 28px;
+            line-height: 1.38;
+            font-weight: 700;
+            word-break: keep-all;
+        }
+
+        .cover-copy strong {
+            color: var(--blue-strong);
+            font-weight: 900;
+        }
+
+        .cover-operator {
+            position: absolute;
+            left: 78px;
+            bottom: 136px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--blue-strong);
+            font-size: 30px;
+            line-height: 1.2;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+        .cover-operator img {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
+
+        .cover-operator .operator-label {
+            color: var(--muted);
+            font-size: 24px;
+            font-weight: 750;
+        }
+
+        .operator-brand {
+            display: block;
+        }
+
+        .cover-tags,
+        .three-grid,
+        .two-grid,
+        .metric-grid,
+        .six-grid {
+            display: grid;
+            gap: 22px;
+        }
+
+        .cover-tags {
+            width: 900px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 58px;
+            gap: 12px;
+        }
+
+        .cover-mark {
+            position: absolute;
+            left: 78px;
+            top: 78px;
+            color: var(--blue-strong);
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 900;
+            letter-spacing: 0;
+        }
+
+        .cover-date {
+            position: absolute;
+            left: 78px;
+            bottom: 100px;
+            color: var(--muted);
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .cover-line {
+            width: 210px;
+            height: 6px;
+            margin-top: 46px;
+            background: var(--blue);
+        }
+
+        .two-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .three-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .six-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .metric-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+            padding: 22px 24px;
+        }
+
+        .card.blue {
+            background: var(--blue-soft);
+        }
+
+        .card.cyan {
+            background: var(--cyan-soft);
+        }
+
+        .card.green {
+            background: var(--green-soft);
+        }
+
+        .card.yellow {
+            background: var(--yellow-soft);
+        }
+
+        .card.gray {
+            background: var(--gray-soft);
+        }
+
+        .card h2,
+        .block-title {
+            margin: 0;
+            color: var(--ink);
+            font-size: 27px;
+            line-height: 1.24;
+            font-weight: 850;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .card p {
+            margin: 12px 0 0;
+            color: var(--body);
+            font-size: 20px;
+            line-height: 1.42;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        .point-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .point-card-grid.three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .point-card {
+            min-height: 212px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .point-card .label {
+            color: var(--blue-strong);
+            font-size: 18px;
+            font-weight: 850;
+        }
+
+        .point-card h2 {
+            margin-top: 12px;
+        }
+
+        .point-card p {
+            font-size: 21px;
+            line-height: 1.45;
+        }
+
+        .overview-split {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .overview-main {
+            display: grid;
+            gap: 18px;
+        }
+
+        .metric-mini-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .metric-mini {
+            min-height: 142px;
+            padding: 20px 22px;
+        }
+
+        .metric-mini .metric-label {
+            font-size: 18px;
+        }
+
+        .metric-mini .metric-value {
+            margin-top: 12px;
+            font-size: 38px;
+        }
+
+        .metric-mini .metric-note {
+            margin-top: 12px;
+            font-size: 16px;
+        }
+
+        .overview-copy-card {
+            min-height: 150px;
+        }
+
+        .overview-copy-card p {
+            font-size: 21px;
+        }
+
+        .image-slot {
+            min-height: 544px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, #F8FAFD 0%, #EEF3FB 100%);
+            overflow: hidden;
+        }
+
+        .image-slot img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 544px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .recommend-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .recommend-card {
+            min-height: 214px;
+            padding: 22px 22px;
+        }
+
+        .recommend-card h2 {
+            color: var(--blue-strong);
+            font-size: 23px;
+        }
+
+        .recommend-card .label {
+            color: var(--blue-strong);
+            font-size: 18px;
+            font-weight: 850;
+        }
+
+        .recommend-card p {
+            font-size: 18px;
+        }
+
+        .down-arrow {
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 34px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .proposal-card {
+            min-height: 232px;
+            background: var(--blue-soft);
+            padding: 28px 24px;
+        }
+
+        .proposal-card .emoji {
+            margin-bottom: 16px;
+            font-size: 38px;
+            line-height: 1;
+        }
+
+        .proposal-card h3 {
+            margin: 0;
+            color: var(--blue-strong);
+            font-size: 24px;
+            line-height: 1.24;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+        .proposal-card p {
+            margin-top: 14px;
+            font-size: 19px;
+            line-height: 1.42;
+        }
+
+        .customer-flow {
+            height: auto;
+            margin-top: 46px;
+        }
+
+        .slide:nth-of-type(n+3) .customer-flow {
+            margin-top: 0;
+        }
+
+        .slide-frame:nth-of-type(n+3) .customer-flow {
+            margin-top: 0;
+        }
+
+        .customer-flow .step {
+            min-height: 330px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: 16px 18px;
+        }
+
+        .compare-table {
+            overflow: visible;
+        }
+
+        .compare-table .ibk-col {
+            position: relative;
+            z-index: 2;
+            background: #DDE9FF;
+            color: var(--blue-strong);
+            font-weight: 850;
+            box-shadow: 0 8px 18px rgba(47, 99, 215, 0.16);
+        }
+
+        .compare-table td.ibk-col {
+            color: var(--ink);
+            border-left: 3px solid var(--blue);
+            border-right: 3px solid var(--blue);
+        }
+
+        .compare-table th.ibk-col {
+            border-left: 3px solid var(--blue);
+            border-right: 3px solid var(--blue);
+            border-top: 3px solid var(--blue);
+            transform: translateY(-8px);
+            padding-top: 22px;
+            padding-bottom: 22px;
+            box-shadow: 0 12px 24px rgba(47, 99, 215, 0.22);
+        }
+
+        .compare-table tbody tr:last-child td.ibk-col {
+            border-bottom: 3px solid var(--blue);
+        }
+
+        .tag {
+            min-height: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #C9D7F7;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--blue-strong);
+            font-size: 25px;
+            font-weight: 850;
+            text-align: center;
+            word-break: keep-all;
+        }
+
+        .bullet-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 24px;
+            color: var(--body);
+            font-size: 21px;
+            line-height: 1.38;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .bullet-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--blue);
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            align-items: stretch;
+            height: 360px;
+            margin-top: 130px;
+        }
+
+        .step {
+            position: relative;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+            padding: 28px 24px;
+        }
+
+        .step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            width: 22px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .step small {
+            display: block;
+            color: var(--blue);
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 850;
+        }
+
+        .step h2 {
+            margin: 24px 0 0;
+            color: var(--ink);
+            font-size: 29px;
+            line-height: 1.18;
+            font-weight: 850;
+        }
+
+        .step p {
+            margin: 16px 0 0;
+            color: var(--body);
+            font-size: 20px;
+            line-height: 1.38;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        .customer-journey-slide .customer-flow {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            height: 420px;
+        }
+
+        .customer-journey-slide .note-band {
+            margin-top: 34px;
+        }
+
+        .customer-journey-slide .step {
+            padding: 32px 30px;
+            background: #FFFFFF;
+        }
+
+        .customer-journey-slide .step.methods-step {
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .journey-emoji {
+            margin-top: 22px;
+            font-size: 42px;
+            line-height: 1;
+        }
+
+        .customer-journey-slide .step h2 {
+            margin-top: 22px;
+            line-height: 1;
+        }
+
+        .journey-pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 0 18px;
+            border-radius: 999px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .customer-journey-slide .step p {
+            margin-top: 18px;
+            font-size: 22px;
+            line-height: 1.42;
+        }
+
+        .speech-bubble {
+            position: relative;
+            margin-top: 22px;
+            padding: 18px 20px;
+            border-radius: 16px;
+            background: #FFFFFF;
+            color: var(--ink);
+            font-size: 22px;
+            line-height: 1.42;
+            font-weight: 850;
+            box-shadow: 0 10px 24px rgba(47, 99, 215, 0.12);
+        }
+
+        .speech-bubble::before {
+            content: "";
+            position: absolute;
+            left: 28px;
+            top: -10px;
+            width: 18px;
+            height: 18px;
+            background: #FFFFFF;
+            transform: rotate(45deg);
+        }
+
+        .journey-desc {
+            color: var(--ink);
+            font-size: 23px;
+            line-height: 1.42;
+            font-weight: 780;
+        }
+
+        .method-list {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+            flex: 1;
+        }
+
+        .method-item {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 14px;
+            align-items: center;
+            padding: 16px 16px;
+            border: 1px solid #C9D7F7;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .method-item .emoji {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            background: var(--blue-soft);
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .method-item strong {
+            display: block;
+            color: var(--ink);
+            font-size: 18px;
+            line-height: 1.24;
+            font-weight: 900;
+        }
+
+        .method-item span {
+            display: block;
+            margin-top: 6px;
+            color: var(--body);
+            font-size: 15px;
+            line-height: 1.32;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .offer-examples {
+            margin: 18px 0 0;
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: var(--blue-soft);
+            display: block;
+        }
+
+        .offer-examples strong {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--blue-strong);
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .offer-examples p {
+            margin: 0;
+            color: var(--ink);
+            font-size: 17px;
+            line-height: 1.34;
+            font-weight: 780;
+            word-break: keep-all;
+        }
+
+        .customer-journey-slide .step.quote-step {
+            background: var(--blue-soft);
+            border-color: #BFD0F8;
+        }
+
+        .customer-journey-slide .step.quote-step .journey-pill {
+            background: #FFFFFF;
+        }
+
+        .scenario-layout {
+            display: grid;
+            grid-template-columns: 0.88fr 1.34fr 0.88fr;
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .scenario-slide .content {
+            padding-top: 62px !important;
+        }
+
+        .overview-slide .content {
+            padding-top: 0 !important;
+        }
+
+        .conversion-slide .content {
+            padding-top: 72px !important;
+        }
+
+        .conversion-layout {
+            display: grid;
+            grid-template-columns: 1.08fr 120px 0.92fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .entry-methods {
+            display: grid;
+            gap: 18px;
+        }
+
+        .entry-method-card {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 20px;
+            align-items: center;
+            min-height: 146px;
+            padding: 22px 24px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+        }
+
+        .entry-method-card .emoji {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: var(--blue-soft);
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .entry-method-card h2 {
+            margin: 0;
+            color: var(--ink);
+            font-size: 27px;
+            line-height: 1.22;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .entry-method-card p {
+            margin: 9px 0 0;
+            color: var(--body);
+            font-size: 19px;
+            line-height: 1.36;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .conversion-bridge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 52px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .conversion-path {
+            display: grid;
+            gap: 18px;
+            align-content: stretch;
+        }
+
+        .conversion-step {
+            position: relative;
+            min-height: 208px;
+            padding: 28px 28px;
+            border: 1px solid #BFD0F8;
+            border-radius: 8px;
+            background: #FAFCFF;
+        }
+
+        .conversion-step:not(:last-child)::after {
+            content: "↓";
+            position: absolute;
+            left: 50%;
+            bottom: -36px;
+            transform: translateX(-50%);
+            color: var(--blue);
+            font-size: 32px;
+            font-weight: 900;
+            z-index: 2;
+        }
+
+        .conversion-step .step-label {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 14px;
+            border-radius: 999px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 17px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .conversion-step h2 {
+            margin: 20px 0 0;
+            color: var(--blue-strong);
+            font-size: 30px;
+            line-height: 1.22;
+            font-weight: 900;
+        }
+
+        .conversion-step p {
+            margin: 12px 0 0;
+            color: var(--body);
+            font-size: 20px;
+            line-height: 1.38;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .scenario-panel {
+            position: relative;
+            min-height: 448px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+            padding: 28px;
+        }
+
+        .scenario-panel::after {
+            content: "→";
+            position: absolute;
+            right: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--blue);
+            font-size: 34px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .scenario-panel:last-child::after {
+            display: none;
+        }
+
+        .scenario-panel.featured {
+            background: #FAFCFF;
+            border-color: #BFD0F8;
+            box-shadow: 0 14px 28px rgba(47, 99, 215, 0.12);
+        }
+
+        .scenario-step-label {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 14px;
+            border-radius: 999px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 17px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .scenario-panel h2 {
+            margin: 18px 0 0;
+            color: var(--ink);
+            font-size: 28px;
+            line-height: 1.2;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .scenario-panel p {
+            margin: 12px 0 0;
+            color: var(--body);
+            font-size: 19px;
+            line-height: 1.42;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .app-phone {
+            position: relative;
+            margin: 20px auto 0;
+            width: 252px;
+            min-height: 318px;
+            border: 10px solid #172033;
+            border-radius: 34px;
+            background: #FFFFFF;
+            overflow: hidden;
+            box-shadow: 0 16px 34px rgba(23, 32, 51, 0.16);
+        }
+
+        .app-phone::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 8px;
+            transform: translateX(-50%);
+            width: 72px;
+            height: 18px;
+            border-radius: 999px;
+            background: #172033;
+            z-index: 2;
+        }
+
+        .app-screen {
+            min-height: 318px;
+            padding: 38px 16px 18px;
+            background: linear-gradient(180deg, #F8FBFF 0%, #FFFFFF 100%);
+        }
+
+        .app-phone.large {
+            width: 318px;
+            min-height: 462px;
+            border-radius: 38px;
+        }
+
+        .app-phone.large .app-screen {
+            min-height: 462px;
+            padding: 42px 20px 20px;
+        }
+
+        .push-card {
+            margin-top: 54px;
+            padding: 18px;
+            border-radius: 18px;
+            background: var(--blue-soft);
+            box-shadow: 0 10px 22px rgba(23, 32, 51, 0.12);
+        }
+
+        .push-card .push-app {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue-strong);
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .push-card .push-message {
+            margin-top: 12px;
+            color: var(--ink);
+            font-size: 18px;
+            line-height: 1.36;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .skeleton-phone {
+            margin-top: 0;
+            border: 1px solid #D8E3FA;
+            border-radius: 22px;
+            background: #FFFFFF;
+            padding: 0;
+        }
+
+        .skeleton-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .skeleton-line {
+            height: 14px;
+            border-radius: 999px;
+            background: #E2E8F0;
+        }
+
+        .book-skeleton {
+            display: grid;
+            grid-template-columns: 92px 1fr;
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .book-cover-skeleton {
+            min-height: 132px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #DDE9FF, #F4F7FE);
+        }
+
+        .content-skeleton {
+            display: grid;
+            gap: 12px;
+            align-content: start;
+        }
+
+        .benefit-box {
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 19px;
+            line-height: 1.25;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .cta-button-skeleton {
+            margin-top: 14px;
+            height: 48px;
+            border-radius: 8px;
+            background: var(--blue);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .complete-card {
+            margin-top: 54px;
+            padding: 26px 18px;
+            border-radius: 18px;
+            background: var(--green-soft);
+            text-align: center;
+        }
+
+        .complete-icon {
+            font-size: 48px;
+            line-height: 1;
+        }
+
+        .complete-card strong {
+            display: block;
+            margin-top: 18px;
+            color: var(--ink);
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        .complete-card span {
+            display: block;
+            margin-top: 14px;
+            color: var(--body);
+            font-size: 16px;
+            line-height: 1.42;
+            font-weight: 700;
+            word-break: keep-all;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            background: var(--white);
+            border: 1px solid var(--line);
+        }
+
+        th,
+        td {
+            border: 1px solid var(--line);
+            padding: 14px 16px;
+            text-align: left;
+            vertical-align: middle;
+            word-break: keep-all;
+        }
+
+        th {
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 19px;
+            line-height: 1.24;
+            font-weight: 850;
+        }
+
+        td {
+            color: var(--body);
+            font-size: 18px;
+            line-height: 1.32;
+            font-weight: 620;
+        }
+
+        .metric {
+            min-height: 220px;
+        }
+
+        .metric-label {
+            color: var(--blue-strong);
+            font-size: 21px;
+            font-weight: 850;
+        }
+
+        .metric-value {
+            margin-top: 14px;
+            color: var(--ink);
+            font-size: 50px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .metric-note {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.32;
+            font-weight: 620;
+        }
+
+        .source-note {
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 18px;
+            font-weight: 650;
+        }
+
+        .type-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .type-title {
+            color: var(--blue-strong);
+            font-size: 46px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .type-card .bullet-list li {
+            font-size: 21px;
+            line-height: 1.34;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--line);
+        }
+
+        .formula {
+            padding: 30px;
+            border: 1px solid #C9D7F7;
+            border-radius: 8px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 29px;
+            line-height: 1.36;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .process .step {
+            min-height: 168px;
+            padding: 18px 16px;
+        }
+
+        .process .step::after {
+            display: none;
+        }
+
+        .process .step h2 {
+            margin-top: 14px;
+            font-size: 22px;
+        }
+
+        .process .step p {
+            font-size: 17px;
+        }
+
+        .snake-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 34px 26px;
+            margin-top: 32px;
+        }
+
+        .snake-card {
+            position: relative;
+            min-height: 230px;
+        }
+
+        .snake-card::after {
+            position: absolute;
+            color: var(--blue);
+            font-size: 34px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .snake-card.forward::after {
+            content: "→";
+            right: -24px;
+            top: 44%;
+        }
+
+        .snake-card.down::after {
+            content: "↓";
+            right: 50%;
+            bottom: -36px;
+            transform: translateX(50%);
+        }
+
+        .snake-card.back::after {
+            content: "←";
+            left: -24px;
+            top: 44%;
+        }
+
+        .snake-card small {
+            display: block;
+            color: var(--blue);
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 850;
+        }
+
+        .snake-card h2 {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        .snake-card p {
+            font-size: 19px;
+            line-height: 1.38;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .promo-card {
+            min-height: 192px;
+        }
+
+        .promo-card .emoji {
+            font-size: 34px;
+            line-height: 1;
+        }
+
+        .promo-card h2 {
+            margin-top: 16px;
+            font-size: 26px;
+        }
+
+        .promo-card p {
+            font-size: 19px;
+        }
+
+        .target-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .target-card {
+            min-height: 288px;
+        }
+
+        .target-card h2 {
+            color: var(--blue-strong);
+            font-size: 26px;
+        }
+
+        .target-card h3 {
+            margin: 22px 0 0;
+            color: var(--ink);
+            font-size: 20px;
+            line-height: 1.25;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+        .target-card p {
+            font-size: 19px;
+            line-height: 1.38;
+        }
+
+        .target-row-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .target-row-header {
+            display: grid;
+            grid-template-columns: 330px 1fr 1fr;
+            gap: 18px;
+            align-items: center;
+            margin-top: 24px;
+            color: var(--blue-strong);
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 850;
+        }
+
+        .target-row-header span {
+            padding: 0 20px;
+        }
+
+        .target-row {
+            display: grid;
+            grid-template-columns: 330px 1fr 1fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .target-row-title {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+            padding: 20px 22px;
+            color: var(--blue-strong);
+            font-size: 24px;
+            line-height: 1.28;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .target-row-cell {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+            padding: 20px 20px;
+        }
+
+        .target-row-cell h3 {
+            margin: 0;
+            color: var(--ink);
+            font-size: 18px;
+            line-height: 1.2;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+        .target-row-cell p {
+            margin: 0;
+            color: var(--body);
+            font-size: 18px;
+            line-height: 1.34;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        .compact {
+            margin-top: 22px;
+        }
+
+        .compact .bullet-list li {
+            font-size: 21px;
+            line-height: 1.34;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .mini-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--gray-soft);
+            padding: 20px 22px;
+        }
+
+        .mini-card h3 {
+            margin: 0;
+            color: var(--blue-strong);
+            font-size: 22px;
+            line-height: 1.24;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+        .mini-card p {
+            margin: 10px 0 0;
+            color: var(--body);
+            font-size: 18px;
+            line-height: 1.34;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        .matrix {
+            display: grid;
+            gap: 0;
+            border: 1px solid var(--line);
+            background: var(--white);
+        }
+
+        .matrix.cols-3 {
+            grid-template-columns: 0.72fr 1.12fr 1.16fr;
+        }
+
+        .matrix.cols-4 {
+            grid-template-columns: 0.72fr 1fr 1fr 1fr;
+        }
+
+        .matrix.cols-5 {
+            grid-template-columns: 0.58fr 0.88fr 1.04fr 1.04fr 0.92fr;
+        }
+
+        .mcell {
+            min-height: 82px;
+            padding: 16px 18px;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            color: var(--body);
+            font-size: 18px;
+            line-height: 1.34;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        .mcell:nth-child(3n),
+        .matrix.cols-4 .mcell:nth-child(4n),
+        .matrix.cols-5 .mcell:nth-child(5n) {
+            border-right: 0;
+        }
+
+        .matrix.cols-4 .mcell:nth-child(3n),
+        .matrix.cols-5 .mcell:nth-child(3n) {
+            border-right: 1px solid var(--line);
+        }
+
+        .matrix.cols-4 .mcell:nth-child(4n),
+        .matrix.cols-5 .mcell:nth-child(5n) {
+            border-right: 0;
+        }
+
+        .mhead {
+            min-height: 56px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 19px;
+            font-weight: 850;
+        }
+
+        .row-label {
+            color: var(--ink);
+            font-weight: 850;
+            background: #FAFBFD;
+        }
+
+        .note-band {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            align-items: center;
+            gap: 22px;
+            margin-top: 22px;
+            padding: 20px 24px;
+            border: 1px solid #C9D7F7;
+            border-radius: 8px;
+            background: var(--blue-soft);
+        }
+
+        .note-band strong {
+            color: var(--blue-strong);
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        .note-band p {
+            margin: 0;
+            color: var(--body);
+            font-size: 20px;
+            line-height: 1.38;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .swimlane {
+            display: grid;
+            grid-template-columns: 190px repeat(5, 1fr);
+            gap: 0;
+            border: 1px solid var(--line);
+            background: var(--white);
+        }
+
+        .lane-cell {
+            min-height: 104px;
+            padding: 16px;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            color: var(--body);
+            font-size: 17px;
+            line-height: 1.32;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        .lane-cell:nth-child(6n) {
+            border-right: 0;
+        }
+
+        .lane-head {
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 18px;
+            font-weight: 850;
+        }
+
+        .lane-label {
+            background: #FAFBFD;
+            color: var(--ink);
+            font-weight: 850;
+        }
+
+        .metric-strip {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            border: 1px solid var(--line);
+            background: var(--white);
+        }
+
+        .metric-strip .metric {
+            min-height: 150px;
+            border: 0;
+            border-right: 1px solid var(--line);
+            border-radius: 0;
+        }
+
+        .metric-strip .metric:last-child {
+            border-right: 0;
+        }
+
+        .metric-strip .metric-value {
+            font-size: 38px;
+        }
+
+        .summary-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--line);
+            background: var(--white);
+        }
+
+        .summary-strip .metric {
+            min-height: 164px;
+            border: 0;
+            border-right: 1px solid var(--line);
+            border-radius: 0;
+        }
+
+        .summary-strip .metric:last-child {
+            border-right: 0;
+        }
+
+        .summary-strip .metric-value {
+            font-size: 40px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .overview-item {
+            min-height: 190px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+            padding: 24px 26px;
+        }
+
+        .overview-item h2 {
+            margin: 0;
+            color: var(--blue-strong);
+            font-size: 27px;
+            line-height: 1.24;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .overview-item p {
+            margin: 14px 0 0;
+            color: var(--body);
+            font-size: 21px;
+            line-height: 1.42;
+            font-weight: 650;
+            word-break: keep-all;
+        }
+
+        .company-profile {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .company-identity {
+            position: relative;
+            min-height: 520px;
+            border: 1px solid #C9D7F7;
+            border-radius: 8px;
+            background: #F8FAFD;
+            overflow: hidden;
+        }
+
+        .company-identity img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 520px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .company-visual-caption {
+            position: absolute;
+            left: 24px;
+            bottom: 22px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.88);
+            color: var(--blue-strong);
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 900;
+            box-shadow: 0 10px 24px rgba(23, 32, 51, 0.10);
+        }
+
+        .company-identity .label {
+            color: var(--blue-strong);
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .company-name {
+            margin-top: 34px;
+            color: var(--ink);
+            font-size: 58px;
+            line-height: 1.12;
+            font-weight: 920;
+            word-break: keep-all;
+        }
+
+        .company-summary {
+            margin-top: 26px;
+            color: var(--body);
+            font-size: 24px;
+            line-height: 1.44;
+            font-weight: 680;
+            word-break: keep-all;
+        }
+
+        .company-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 52px;
+        }
+
+        .company-mini {
+            min-height: 112px;
+            padding: 20px;
+            border: 1px solid #D8E3FA;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        .company-mini span {
+            display: block;
+            color: var(--muted);
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .company-mini strong {
+            display: block;
+            margin-top: 12px;
+            color: var(--blue-strong);
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        .company-table {
+            height: 520px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .company-table table {
+            height: 100%;
+        }
+
+        .company-table th {
+            width: 172px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 22px;
+            line-height: 1.24;
+            font-weight: 900;
+        }
+
+        .company-table td {
+            color: var(--ink);
+            font-size: 23px;
+            line-height: 1.35;
+            font-weight: 720;
+        }
+
+        .business-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .business-list li {
+            margin: 0 0 7px;
+            color: var(--ink);
+            font-size: 20px;
+            line-height: 1.28;
+            font-weight: 720;
+            word-break: keep-all;
+        }
+
+        .business-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .awards-band {
+            margin-top: 20px;
+        }
+
+        .awards-title {
+            display: inline-flex;
+            align-items: center;
+            min-height: 38px;
+            padding: 0 18px;
+            border: 1px solid #C9D7F7;
+            border-radius: 8px;
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+            font-size: 21px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .awards-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .award-item {
+            min-height: 186px;
+            padding: 12px 13px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--white);
+        }
+
+        .award-year {
+            display: inline-flex;
+            align-items: center;
+            min-height: 26px;
+            padding: 0 10px;
+            border-radius: 999px;
+            background: var(--yellow-soft);
+            color: #9A6200;
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 900;
+        }
+
+        .award-heading {
+            margin: 8px 0 0;
+            color: var(--ink);
+            font-size: 13px;
+            line-height: 1.24;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
+        .award-detail-list {
+            margin: 8px 0 0;
+            padding-left: 13px;
+        }
+
+        .award-detail-list li {
+            margin: 0 0 4px;
+            color: var(--body);
+            font-size: 11px;
+            line-height: 1.22;
+            font-weight: 680;
+            word-break: keep-all;
+        }
+
+        .award-detail-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .dense-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .dense-list li {
+            margin: 0 0 8px;
+            color: var(--body);
+            font-size: 17px;
+            line-height: 1.3;
+            font-weight: 620;
+            word-break: keep-all;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #fff;
+            }
+
+            .deck {
+                display: block;
+            }
+
+            .slide-frame {
+                width: 1920px;
+                height: 1080px;
+                page-break-after: always;
+                overflow: visible;
+            }
+
+            .slide {
+                position: relative;
+                left: auto;
+                top: auto;
+                box-shadow: none;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="deck">
+        <section class="slide cover">
+            <div class="cover-mark">금융사 앱 구독 커머스</div>
+            <div class="cover-title">입점/제휴 제안서</div>
+            <div class="cover-line"></div>
+            <p class="cover-copy">
+                <strong>금융사 앱 채널</strong>을 통해 고객의 <strong>월 1억 건 이상</strong> 지출 데이터를 기반으로,
+                반복 구매 상품을 더 좋은 조건으로 제안하는 <strong>생활밀착형 구독 커머스</strong>에
+                함께할 파트너십을 제안합니다.
+            </p>
+            <div class="cover-operator">
+                <span class="operator-label">제안사</span>
+                <div class="operator-brand">
+                    <span>주식회사 왓섭</span>
+                </div>
+            </div>
+            <div class="cover-date">2026. 05</div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>1</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">01. 제안사 일반 현황</p>
+                <h1>왓섭은 고정지출과 생활소비를 관리하는 핀테크 스타트업입니다</h1>
+                <p class="desc">2020년 창업 후 구독 관리 앱으로 출발해, 현재 금융사와 협력하여 은행·카드 고객의 고정지출과 생활소비 관리 서비스를 운영하고 있습니다.</p>
+            </header>
+            <div class="content">
+                <div class="company-profile">
+                    <div class="company-identity">
+                        <img src="./company-profile-hero.png" alt="왓섭 서비스 소개 이미지">
+                        <div class="company-visual-caption">서비스 운영사 · (주)왓섭</div>
+                    </div>
+                    <div class="company-table">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>기업명</th>
+                                    <td>(주)왓섭</td>
+                                </tr>
+                                <tr>
+                                    <th>설립일</th>
+                                    <td>2020년 02월 17일</td>
+                                </tr>
+                                <tr>
+                                    <th>대표자</th>
+                                    <td>김준태</td>
+                                </tr>
+                                <tr>
+                                    <th>주소</th>
+                                    <td>서울특별시 영등포구 당산로41길 11, 더블유동 808호</td>
+                                </tr>
+                                <tr>
+                                    <th>직원 수</th>
+                                    <td>17명</td>
+                                </tr>
+                                <tr>
+                                    <th>주요사업</th>
+                                    <td>
+                                        <ul class="business-list">
+                                            <li>데이터베이스 및 온라인정보 제공업</li>
+                                            <li>본인신용정보관리업</li>
+                                            <li>포털 및 기타 인터넷 정보매개 서비스업</li>
+                                            <li>응용 소프트웨어 개발 및 공급업</li>
+                                            <li>통신판매업 및 통신판매중개업</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="awards-band">
+                    <div class="awards-title">주요 수상 내역</div>
+                    <div class="awards-list">
+                        <div class="award-item">
+                            <span class="award-year">2023</span>
+                            <div class="award-heading">정보보호 유공 표창 등 3건</div>
+                            <ul class="award-detail-list">
+                                <li>1위, KIC DeFy Conference 2023</li>
+                                <li>정보보호사업유공자 표창, SecureKorea 2023 컨퍼런스</li>
+                                <li>대상, 2023 KOEF-GMEP US FUNDING TRACK DEMODAY</li>
+                            </ul>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-year">2022</span>
+                            <div class="award-heading">Try everything 2022 전국민 창업오디션 최우수상 등 2건</div>
+                            <ul class="award-detail-list">
+                                <li>3위, SGI상생플러스 2021 데모데이</li>
+                                <li>최우수상, Try everything 2022 전국민 창업오디션</li>
+                                <li>3위, AI 역량 테스트 x KT 아이디어 경진대회</li>
+                            </ul>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-year">2021</span>
+                            <div class="award-heading">중소벤처기업부장관상 대상 등 7건</div>
+                            <ul class="award-detail-list">
+                                <li>대상, 연세대학교 Quantum Jump IR 투자유치대회</li>
+                                <li>1위, 2021 NEXT AI DAY</li>
+                                <li>우수상, 2021 U-Star 베스트 그라운드</li>
+                                <li>1위, SGI상생플러스 2021 선발대회</li>
+                                <li>우수상, Y Combinator Express IR 데모데이</li>
+                            </ul>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-year">2020</span>
+                            <div class="award-heading">핀테크 아이디어 공모전 대상 등 2건</div>
+                            <ul class="award-detail-list">
+                                <li>대상, 삼성금융 Open Collaboration</li>
+                                <li>대상, 하나금융-핀테크 New Biz 아이디어 공모전</li>
+                                <li>최우수상, 2020 디지털혁신캠퍼스 챌린지 온라인 해커톤</li>
+                            </ul>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-year">2019</span>
+                            <div class="award-heading">금융위원장상 대상 등 5건</div>
+                            <ul class="award-detail-list">
+                                <li>최우수상, 2019 KTB Venture challenge</li>
+                                <li>대상, G-Start up Pitchday 창업아이디어피칭오디션</li>
+                                <li>우수상, 2019 d.프리미어 창업리그</li>
+                                <li>우수상, 2019 핀테크-인슈어테크 해커톤</li>
+                                <li>우수상, G-Start up Pitchday Championship</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>2</span></footer>
+        </section>
+
+        <section class="slide overview-slide">
+            <header class="slide-header">
+                <p class="kicker">02. 구독몰 개요</p>
+                <h1>금융사 앱 고객 기반의 생활밀착형 커머스를 제공합니다</h1>
+                <p class="desc">금융사 앱 고객의 정기지출과 생활소비 기반으로 상품을 추천하고, 앱 내 구매 또는 제휴사 신청으로 연결하는 커머스 채널입니다.
+                </p>
+            </header>
+            <div class="content">
+                <div class="overview-split">
+                    <div class="overview-main">
+                        <div class="metric-mini-row">
+                            <div class="card metric-mini">
+                                <div class="metric-label">채널 고객 기반</div>
+                                <div class="metric-value">134만 명</div>
+                                <div class="metric-note">금융사 앱 총 가입자</div>
+                            </div>
+                            <div class="card metric-mini">
+                                <div class="metric-label">월간 활성 고객</div>
+                                <div class="metric-value">45만 명</div>
+                                <div class="metric-note">금융사 앱 MAU(26년 3월 기준)</div>
+                            </div>
+                            <div class="card metric-mini">
+                                <div class="metric-label">주요 구매층</div>
+                                <div class="metric-value">30대+</div>
+                                <div class="metric-note">생활소비 고객<br>10~20대 사회초년생 확장 타겟</div>
+                            </div>
+                        </div>
+                        <div class="card overview-copy-card">
+                            <h2>대상 고객</h2>
+                            <p>주요 대상은 구매력이 높은 30대 이상 생활소비 고객입니다. 10~20대 사회초년생은 초기 생활소비와 라이프 이벤트 기반의 확장 타겟으로 연결합니다.</p>
+                        </div>
+                        <div class="card overview-copy-card">
+                            <h2>판매 상품</h2>
+                            <p>디지털 쿠폰, 구독권, 렌탈, 케어 서비스, 정기배송, 생활 서비스처럼 반복 소비·생활비 절감·즉시 혜택이 명확한 상품이 적합합니다.</p>
+                        </div>
+                        <div class="card overview-copy-card">
+                            <h2>판매 방식</h2>
+                            <p>즉시 구매형 상품은 금융사 앱 내 구매 흐름으로 판매하고, 렌탈·보험·통신 등 상담형 상품은 제휴사 랜딩 또는 상담 신청으로 연결합니다.</p>
+                        </div>
+                    </div>
+                    <div class="image-slot">
+                        <img src="./slide-01-overview-image.png" alt="금융사 앱 구독 커머스 서비스 이미지">
+                    </div>
+                </div>
+                <div class="note-band">
+                    <strong>기준</strong>
+                    <p>A 금융사 앱 기준이며, 향후 협의 중인 금융사 앱 채널로 확장 예정입니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>3</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">03. 구독몰 핵심 가치</p>
+                <h1>고객 상황에 맞는 상품을 제안합니다</h1>
+                <p class="desc">정기지출과 생활소비 흐름으로 고객 상황을 이해하고, 상품 제안을 통해 앱 내 구매 및 관리가 가능하도록 합니다.</p>
+            </header>
+            <div class="content">
+                <div class="recommend-grid">
+                    <div>
+                        <div class="card recommend-card">
+                            <div class="label">01</div>
+                            <h2>이미 쓰는 상품·서비스를 더 저렴하게</h2>
+                            <p>OTT, 통신, 멤버십, 정기결제 등 매월 반복 결제하는 고객</p>
+                        </div>
+                        <div class="down-arrow">↓</div>
+                        <div class="card proposal-card">
+                            <div class="emoji">💳</div>
+                            <h3>할인 구독권·전용 요금 제안</h3>
+                            <p>기존 지출 항목과 연결해 OTT 구독권, 통신 혜택, 멤버십 할인을 판매합니다.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card recommend-card">
+                            <div class="label">02</div>
+                            <h2>매번 쓰는 상품·서비스를 더 합리적으로</h2>
+                            <p>카페, 편의점, 외식, 생필품처럼 반복 소비가 잦은 고객</p>
+                        </div>
+                        <div class="down-arrow">↓</div>
+                        <div class="card proposal-card">
+                            <div class="emoji">🎟️</div>
+                            <h3>쿠폰·모바일 이용권 판매</h3>
+                            <p>즉시 사용 가능한 카페 쿠폰, 편의점 상품권, 외식 쿠폰, 정기배송 상품을 제안합니다.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card recommend-card">
+                            <div class="label">03</div>
+                            <h2>같이 쓰면 좋은 상품을 페어링</h2>
+                            <p>렌탈, 이사, 차량, 반려동물, 육아 관련 지출이 있는 고객</p>
+                        </div>
+                        <div class="down-arrow">↓</div>
+                        <div class="card proposal-card">
+                            <div class="emoji">🏠</div>
+                            <h3>연관 생활 서비스 연결</h3>
+                            <p>청소, 홈케어, 필터 관리, 차량관리, 펫케어처럼 함께 쓰기 좋은 상품을 제안합니다.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card recommend-card">
+                            <div class="label">04</div>
+                            <h2>라이프 이벤트에 맞춰 제안</h2>
+                            <p>독립, 결혼, 출산, 이사, 건강관리, 교육비 증가 시점의 고객</p>
+                        </div>
+                        <div class="down-arrow">↓</div>
+                        <div class="card proposal-card">
+                            <div class="emoji">👩‍💼</div>
+                            <h3>패키지·상담형 상품 연결</h3>
+                            <p>보험, 교육, 건강식품, 이사/청소, 홈서비스, 상담형 서비스를 신청으로 연결합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-band">
+                    <strong>판매 제안</strong>
+                    <p>고객의 지출 패턴과 상황을 이해하고, 필요한 시점에 맞춰 상품과 서비스를 먼저 제안합니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>4</span></footer>
+        </section>
+
+        <section class="slide customer-journey-slide">
+            <header class="slide-header">
+                <p class="kicker">04. 고객 이용 흐름</p>
+                <h1>다양한 추천 방식으로 혜택 확인 후 구독 전환까지 연결합니다</h1>
+                <p class="desc">앱 푸시, 앱 내 콘텐츠/상품 오퍼링, 추천 버블 팝업 등 고객이 반응할 수 있는 접점에서 상품을 제안하고, 혜택 확인 후 바로 구매·구독 전환으로 이어갑니다.</p>
+            </header>
+            <div class="content">
+                <div class="flow customer-flow">
+                    <div class="step quote-step methods-step">
+                        <small>01</small>
+                        <h2><span class="journey-pill">추천 방식</span></h2>
+                        <div class="method-list">
+                            <div class="method-item">
+                                <div class="emoji">🔔</div>
+                                <div><strong>앱 푸시</strong><span>정기지출 확인·갱신·결제 전후 시점에 혜택 메시지 발송</span></div>
+                            </div>
+                            <div class="method-item">
+                                <div class="emoji">🖼️</div>
+                                <div><strong>앱 내 콘텐츠/상품 오퍼링</strong><span>신작·추천작, 렌탈 상품, 추천요금제 등을 영상·이미지형 콘텐츠로 제안</span></div>
+                            </div>
+                            <div class="method-item">
+                                <div class="emoji">💬</div>
+                                <div><strong>추천 버블 팝업</strong><span>지출 확인·구독 관리 흐름에서 짧은 추천 메시지 노출</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <small>02</small>
+                        <div class="journey-emoji">🎁</div>
+                        <h2><span class="journey-pill">혜택 확인</span></h2>
+                        <p class="journey-desc">고객은 추천 메시지나 콘텐츠를 눌러 상품 상세, 추천 이유, 할인·쿠폰·전용 혜택을 확인합니다.</p>
+                        <div class="offer-examples">
+                            <strong>오퍼링 설명</strong>
+                            <p>OTT·전자책은 신작/추천작, 렌탈은 적합 상품, 통신은 추천요금제처럼 상품군별로 맞춤 오퍼를 구성합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <small>03</small>
+                        <div class="journey-emoji">✅</div>
+                        <h2><span class="journey-pill">구독 전환 완료</span></h2>
+                        <p class="journey-desc">혜택을 확인한 고객은 앱 안에서 바로 구매·구독 전환을 완료하고, 혜택 적용과 이용 내역까지 확인합니다.</p>
+                    </div>
+                </div>
+                <div class="note-band">
+                    <strong>타게팅 방식</strong>
+                    <p>고객의 지출 패턴과 라이프 이벤트를 기반으로 상품을 추천하고, 제휴사에는 상품 특성에 맞는 맞춤 타게팅 기회를 제공합니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>5</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">05. 채널 차별점</p>
+                <h1>일반몰·타 카드몰과 달리 금융사 앱의 지출 관리 맥락에서 제안합니다</h1>
+                <p class="desc">금융사 앱 구독 커머스는 검색과 구매이력 중심 전시를 넘어, 고객이 실제로 관리하는 생활지출 항목에 맞춰 상품을 추천합니다.</p>
+            </header>
+            <div class="content">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th style="width:18%;">구분</th>
+                            <th class="ibk-col">금융사 앱 구독 커머스</th>
+                            <th style="width:25%;">일반 카드몰</th>
+                            <th style="width:25%;">일반 쇼핑몰</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>고객 진입 맥락</td>
+                            <td class="ibk-col">정기지출과 생활 소비 기반 추천</td>
+                            <td>혜택 확인, 이벤트/프로모션 확인, 상품 전시 영역 방문</td>
+                            <td>상품 검색, 가격 비교, 쇼핑 목적 방문</td>
+                        </tr>
+                        <tr>
+                            <td>추천 기준</td>
+                            <td class="ibk-col">정기지출, 반복소비, 라이프 이벤트, 맞춤 혜택</td>
+                            <td>카드 혜택, 구매이력, 카테고리, 프로모션 중심</td>
+                            <td>검색어, 클릭, 장바구니, 구매이력</td>
+                        </tr>
+                        <tr>
+                            <td>상품 제안 방식</td>
+                            <td class="ibk-col">기존 지출의 절감·대체·페어링 상품을 추천</td>
+                            <td>카드 혜택 상품, 할인 상품, 기획전 중심 노출</td>
+                            <td>유사 상품, 인기 상품, 가격 경쟁 상품 추천</td>
+                        </tr>
+                        <tr>
+                            <td>구매 전환 포인트</td>
+                            <td class="ibk-col">“매월 나가는 비용 절감”, “같이 쓰면 좋은 상품”, “지금 필요한 생활 서비스”</td>
+                            <td>카드 할인, 쿠폰, 이벤트 혜택</td>
+                            <td>가격, 배송, 리뷰, 적립 혜택</td>
+                        </tr>
+                        <tr>
+                            <td>제휴 운영 방식</td>
+                            <td class="ibk-col">입점 판매와 제휴 판매</td>
+                            <td>입점 판매와 프로모션 중심</td>
+                            <td>입점 판매 중심</td>
+                        </tr>
+                        <tr>
+                            <td>핵심 차별성</td>
+                            <td class="ibk-col">고객의 소비 패턴과 생활 이벤트 기반 상품 추천</td>
+                            <td>카드 혜택 기반 구매 유도</td>
+                            <td>쇼핑 편의성</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note-band">
+                    <strong>차별 메시지</strong>
+                    <p>일반 카드몰이 상품 전시와 혜택 중심이라면, 금융사 앱 구독 커머스는 고객의 생활 지출을 이해하여 상품을 추천합니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>6</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">06. 채널 규모 및 주요 고객</p>
+                <h1>금융사 앱 기반으로 고객 접점을 확장합니다</h1>
+                <p class="desc">금융사 앱 고객을 대상으로, 10~20대의 즉시 혜택 니즈부터 30대 이상 고객의 고정 생활비 절감 니즈까지 타겟별 상품을 제안합니다.
+                </p>
+            </header>
+            <div class="content">
+                <div class="summary-strip">
+                    <div class="card metric">
+                        <div class="metric-label">1차 채널 규모</div>
+                        <div class="metric-value">100만 명 이상</div>
+                        <div class="metric-note">금융사 앱 이용 고객 대상 신규 판매·제휴 접점</div>
+                    </div>
+                    <div class="card metric">
+                        <div class="metric-label">주요 구매층</div>
+                        <div class="metric-value">30대 이상</div>
+                        <div class="metric-note">고정 생활비, 가구 소비, 장기 이용 상품 중심</div>
+                    </div>
+                    <div class="card metric">
+                        <div class="metric-label">확장 타겟</div>
+                        <div class="metric-value">10~20대부터</div>
+                        <div class="metric-note">초기 생활소비 경험을 만들고 생애주기별 구매로 연결</div>
+                    </div>
+                </div>
+                <div class="target-row-header">
+                    <span>타겟 구분</span>
+                    <span>고객 특성</span>
+                    <span>적합 상품</span>
+                </div>
+                <div class="target-row-list" style="margin-top:10px;">
+                    <div class="target-row">
+                        <div class="target-row-title">10~20대 초기 생활소비</div>
+                        <div class="target-row-cell">
+                            <p>편의점, 카페, 디지털 콘텐츠, 모바일 쿠폰 등 즉시 체감 가능한 혜택에 반응합니다.</p>
+                        </div>
+                        <div class="target-row-cell">
+                            <p>모바일 쿠폰, OTT, 게임/문화 콘텐츠, 자기계발 상품</p>
+                        </div>
+                    </div>
+                    <div class="target-row">
+                        <div class="target-row-title">30대 이상 주요 구매층</div>
+                        <div class="target-row-cell">
+                            <p>통신, 렌탈, 보험, 교육, 정기배송 등 고정 생활비와 가구 소비 비중이 높아지는 고객군입니다.</p>
+                        </div>
+                        <div class="target-row-cell">
+                            <p>통신 혜택, 렌탈, 보험, 교육, 정기배송, 건강식품</p>
+                        </div>
+                    </div>
+                    <div class="target-row">
+                        <div class="target-row-title">라이프 이벤트 고객</div>
+                        <div class="target-row-cell">
+                            <p>독립, 결혼, 출산, 이사, 차량, 건강관리 등 생활 변화에 따라 구매 니즈가 발생합니다.</p>
+                        </div>
+                        <div class="target-row-cell">
+                            <p>이사/청소, 홈케어, 차량관리, 육아, 헬스케어, 상담형 서비스</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-band">
+                    <strong>핵심 설명</strong>
+                    <p>금융사 앱 채널을 기반으로 향후 협의 중인 제휴 채널까지 확장 가능한 구조입니다. 핵심 타겟은 고정지출과 생활소비 관리 니즈가 있는 고객군입니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>7</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">07. 판매 상품군 및 제휴 유형</p>
+                <h1>상품 특성에 따라 제휴 유형을 구분합니다</h1>
+                <p class="desc">판매 상품군과 운영 방식에 맞춰 공급형, 입점형, 제휴형으로 운영합니다.</p>
+            </header>
+            <div class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:20%;">판매 상품군</th>
+                            <th style="width:32%;">상품 예시</th>
+                            <th style="width:18%;">제휴 유형</th>
+                            <th>운영 방식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>디지털 쿠폰/이용권</td>
+                            <td>카페, 편의점, 외식, 영화, 생활 브랜드 쿠폰</td>
+                            <td>공급형</td>
+                            <td>대행사 또는 공급사로부터 쿠폰·이용권을 공급받아 구독몰에서 직접 판매</td>
+                        </tr>
+                        <tr>
+                            <td>디지털 구독권</td>
+                            <td>OTT, 음악, 전자책, 교육, 소프트웨어 구독권</td>
+                            <td>입점형</td>
+                            <td>구독권 발급과 등록 안내를 중심으로 운영</td>
+                        </tr>
+                        <tr>
+                            <td>정기배송 상품</td>
+                            <td>생수, 커피, 건강식품, 간편식, 생활용품</td>
+                            <td>입점형</td>
+                            <td>주문, 배송, 옵션, 취소/환불 흐름을 구독몰 안에서 운영</td>
+                        </tr>
+                        <tr>
+                            <td>케어/생활 서비스</td>
+                            <td>청소, 세탁, 차량관리, 반려동물 케어, 홈케어</td>
+                            <td>입점형 / 제휴형</td>
+                            <td>서비스 예약·상담 필요 여부에 따라 입점형 또는 제휴형으로 운영</td>
+                        </tr>
+                        <tr>
+                            <td>렌탈/보험/통신</td>
+                            <td>정수기, 공기청정기, 보험, 통신 요금제, 상담형 서비스</td>
+                            <td>제휴형</td>
+                            <td>상품 소개 후 제휴사 랜딩 또는 상담 신청으로 연결</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note-band">
+                    <strong>제휴 유형 설명</strong>
+                    <p>공급형은 상품을 공급받아 구독몰에서 직접 판매합니다. 입점형은 상품 상세, 결제, 주문, 취소/환불을 구독몰 안에서 처리합니다. 제휴형은 상품 소개 후 제휴사 랜딩 또는 상담 신청으로 연결합니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>8</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">08. 입점 절차 및 운영 방식</p>
+                <h1>입점은 7단계로 진행하고, 운영 기준은 계약 전 확정합니다</h1>
+                <p class="desc">제휴/입점 신청 후 상품 검토, 조건 협의, 계약, 등록, 테스트를 거쳐 판매를 시작합니다.</p>
+            </header>
+            <div class="content">
+                <div class="snake-flow">
+                    <div class="card snake-card forward" style="grid-column:1; grid-row:1;">
+                        <small>01</small>
+                        <h2>제휴/입점 신청</h2>
+                        <p>회사 정보, 담당자, 입점 희망 상품 리스트를 접수합니다.</p>
+                    </div>
+                    <div class="card snake-card forward" style="grid-column:2; grid-row:1;">
+                        <small>02</small>
+                        <h2>상품 검토</h2>
+                        <p>상품 경쟁력, 고객 적합성, 운영 가능 범위와 리스크를 확인합니다.</p>
+                    </div>
+                    <div class="card snake-card forward" style="grid-column:3; grid-row:1;">
+                        <small>03</small>
+                        <h2>운영 조건 협의</h2>
+                        <p>판매가, 수수료, 프로모션, CS, 환불, 구매확정 기준을 협의합니다.</p>
+                    </div>
+                    <div class="card snake-card down" style="grid-column:4; grid-row:1;">
+                        <small>04</small>
+                        <h2>계약 체결</h2>
+                        <p>계약 조건, 정산 정보, 역할과 책임 범위를 확정합니다.</p>
+                    </div>
+                    <div class="card snake-card back" style="grid-column:4; grid-row:2;">
+                        <small>05</small>
+                        <h2>상품 등록</h2>
+                        <p>상품명, 가격, 혜택, 이미지, 상세 설명, 사용 조건을 등록합니다.</p>
+                    </div>
+                    <div class="card snake-card back" style="grid-column:3; grid-row:2;">
+                        <small>06</small>
+                        <h2>판매 전 테스트</h2>
+                        <p>결제, 쿠폰 발급, 배송, 외부 랜딩, 상담 연결, 정산 데이터를 점검합니다.</p>
+                    </div>
+                    <div class="card snake-card" style="grid-column:2; grid-row:2;">
+                        <small>07</small>
+                        <h2>판매 시작</h2>
+                        <p>상품 판매를 시작하고 필요 시 노출·추천·프로모션과 연계합니다.</p>
+                    </div>
+                </div>
+                <div class="note-band">
+                    <strong>수수료/정산 참고</strong>
+                    <p>수수료는 상품 유형, 운영 방식, 프로모션 조건 등에 따라 제휴사와 협의해 확정합니다. 정산은 월 1회 진행하는 것을 기본 방향으로 하며, 세부 기준은 계약 단계에서 별도
+                        협의합니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>9</span></footer>
+        </section>
+
+        <section class="slide">
+            <header class="slide-header">
+                <p class="kicker">09. 마케팅 프로모션 방안</p>
+                <h1>다양한 프로모션과 캠페인으로 고객 접점을 계속 이어갑니다</h1>
+                <p class="desc">상품 성격에 맞춰 메인 노출, 타겟 추천, 시즌 기획전, 앱 메시지, 공동 혜택을 간단히 조합해 운영합니다.</p>
+            </header>
+            <div class="content">
+                <div class="promo-grid">
+                    <div class="card promo-card">
+                        <div class="emoji">🏷️</div>
+                        <h2>메인/카테고리 노출</h2>
+                        <p>신규 입점 상품, 인기 혜택, 월간 추천 상품 중심으로 노출합니다.</p>
+                    </div>
+                    <div class="card promo-card">
+                        <div class="emoji">🎯</div>
+                        <h2>타겟 추천</h2>
+                        <p>정기지출, 반복 소비, 라이프 이벤트 고객에게 맞춰 추천합니다.</p>
+                    </div>
+                    <div class="card promo-card">
+                        <div class="emoji">📅</div>
+                        <h2>시즌 기획전</h2>
+                        <p>이사, 새학기, 건강관리, 명절 등 생활 이벤트와 묶어 운영합니다.</p>
+                    </div>
+                    <div class="card promo-card">
+                        <div class="emoji">🔔</div>
+                        <h2>앱 메시지</h2>
+                        <p>배너, 푸시, 메시지, 쿠폰 알림으로 구매 전환을 유도합니다.</p>
+                    </div>
+                    <div class="card promo-card">
+                        <div class="emoji">🎁</div>
+                        <h2>공동 혜택</h2>
+                        <p>카드 할인, 캐시백, 판매자 할인, 전용 쿠폰을 조합합니다.</p>
+                    </div>
+                    <div class="card promo-card">
+                        <div class="emoji">🚀</div>
+                        <h2>런칭 프로모션</h2>
+                        <p>입점 초기 한정 혜택으로 첫 판매 반응을 빠르게 확인합니다.</p>
+                    </div>
+                </div>
+                <div class="note-band">
+                    <strong>운영 협의</strong>
+                    <p>서비스 런칭 이후 상품 성격과 운영 일정에 따라 별도의 프로모션 및 캠페인 운영 방안을 제휴사와 협의합니다.</p>
+                </div>
+            </div>
+            <footer class="footer"><span>금융사 앱 구독 커머스 입점/제휴 제안서</span><span>10</span></footer>
+        </section>
+    </main>
+    <script>
+        (() => {
+            const designWidth = 1920;
+            const designHeight = 1080;
+            const horizontalMargin = () => Math.min(80, window.innerWidth * 0.08);
+            const verticalMargin = () => Math.min(80, window.innerHeight * 0.08);
+
+            const setSlideScale = () => {
+                const availableWidth = Math.max(320, window.innerWidth - horizontalMargin());
+                const availableHeight = Math.max(240, window.innerHeight - verticalMargin());
+                const scale = Math.min(1, availableWidth / designWidth, availableHeight / designHeight);
+                document.documentElement.style.setProperty('--slide-scale', scale.toFixed(4));
+            };
+
+            const wrapSlides = () => {
+                document.querySelectorAll('.deck > .slide').forEach((slide) => {
+                    const frame = document.createElement('div');
+                    frame.className = 'slide-frame';
+                    slide.parentNode.insertBefore(frame, slide);
+                    frame.appendChild(slide);
+                });
+            };
+
+            const init = () => {
+                wrapSlides();
+                setSlideScale();
+                window.addEventListener('resize', setSlideScale, { passive: true });
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+
+</html>

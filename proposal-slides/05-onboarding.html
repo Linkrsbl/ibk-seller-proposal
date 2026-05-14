@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입점 절차 안내 슬라이드</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        :root {
+            --ink: #101828;
+            --body: #344054;
+            --blue: #2563EB;
+            --blue-strong: #1D4ED8;
+            --blue-soft: #EFF6FF;
+            --green-soft: #ECFDF3;
+            --yellow-soft: #FFFAEB;
+            --line: #E4E7EC;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: var(--ink);
+        }
+
+        .slide {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            padding: 72px 96px 58px;
+            background:
+                radial-gradient(circle at 90% 12%, rgba(37, 99, 235, 0.13), transparent 26%),
+                radial-gradient(circle at 8% 92%, rgba(14, 165, 233, 0.11), transparent 30%),
+                linear-gradient(180deg, #FFFFFF 0%, #F6F9FE 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: linear-gradient(135deg, rgba(0,0,0,0.70), transparent 58%);
+        }
+
+        .copy,
+        .timeline,
+        .bottom-note {
+            position: relative;
+            z-index: 1;
+        }
+
+        .copy {
+            width: 1680px;
+            padding-left: 28px;
+            border-left: 8px solid #5A6DFF;
+        }
+
+        h1 {
+            margin: 0;
+            color: #000000;
+            font-size: 60px;
+            line-height: 1.16;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        h1 strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+
+        .lead {
+            width: 1480px;
+            margin: 24px 0 0;
+            color: #3B4656;
+            font-size: 31px;
+            line-height: 1.44;
+            font-weight: 850;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr 120px 1fr 120px 1fr;
+            align-items: center;
+            margin-top: 88px;
+        }
+
+        .step-card {
+            min-height: 430px;
+            padding: 38px;
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 24px 70px rgba(16, 24, 40, 0.10);
+        }
+
+        .step-card:nth-child(1) .step-icon {
+            background: var(--blue-soft);
+            color: var(--blue-strong);
+        }
+
+        .step-card:nth-child(3) .step-icon {
+            background: var(--yellow-soft);
+            color: #B45309;
+        }
+
+        .step-card:nth-child(5) .step-icon {
+            background: var(--green-soft);
+            color: #047857;
+        }
+
+        .step-icon {
+            width: 74px;
+            height: 74px;
+            display: grid;
+            place-items: center;
+            border-radius: 22px;
+            font-size: 34px;
+            font-weight: 950;
+        }
+
+        .step-number {
+            display: block;
+            margin-top: 34px;
+            color: var(--blue);
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 950;
+        }
+
+        .step-card h2 {
+            margin: 20px 0 0;
+            color: var(--ink);
+            font-size: 38px;
+            line-height: 1.18;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .step-card p {
+            margin: 20px 0 0;
+            color: var(--body);
+            font-size: 24px;
+            line-height: 1.44;
+            font-weight: 700;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .arrow {
+            height: 8px;
+            position: relative;
+            margin: 0 22px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(37, 99, 235, 0.22), var(--blue));
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: -2px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            transform: translateY(-50%);
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
+            border-left: 28px solid var(--blue);
+        }
+
+        .bottom-note {
+            width: 1200px;
+            margin: 70px auto 0;
+            padding: 20px 30px;
+            border-radius: 999px;
+            color: #344054;
+            background: rgba(255,255,255,0.88);
+            border: 1px solid var(--line);
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.42;
+            font-weight: 850;
+            box-shadow: 0 16px 44px rgba(16, 24, 40, 0.07);
+        }
+
+        .bottom-note strong {
+            color: var(--blue-strong);
+            font-weight: 950;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="slide" aria-label="입점 절차 안내 슬라이드">
+        <section class="copy">
+            <h1>입점 절차는 <strong>신청부터 판매 시작까지</strong> 단순하게 이어집니다</h1>
+            <p class="lead">
+                복잡한 구축 과정 없이 입점 의사를 전달하고, 상품 정보를 등록한 뒤 판매를 시작할 수 있습니다.
+                판매자는 필요한 정보만 준비하면 기존 운영 흐름을 살려 빠르게 입점을 진행할 수 있습니다.
+            </p>
+        </section>
+
+        <section class="timeline" aria-label="입점 절차 순서도">
+            <article class="step-card">
+                <div class="step-icon">📝</div>
+                <span class="step-number">Step 1</span>
+                <h2>입점 신청</h2>
+                <p>입점 의향과 담당자 정보를 제출합니다. 상품군, 운영 방식, 제휴 조건을 확인합니다.</p>
+            </article>
+
+            <div class="arrow" aria-hidden="true"></div>
+
+            <article class="step-card">
+                <div class="step-icon">📦</div>
+                <span class="step-number">Step 2</span>
+                <h2>상품 등록</h2>
+                <p>상품명, 가격, 구성, 이미지, 재고 등 판매에 필요한 정보를 등록합니다.</p>
+            </article>
+
+            <div class="arrow" aria-hidden="true"></div>
+
+            <article class="step-card">
+                <div class="step-icon">🚀</div>
+                <span class="step-number">Step 3</span>
+                <h2>판매 시작</h2>
+                <p>IBK 구독몰 안에서 상품이 노출되고, 고객의 소비 맥락에 맞춰 추천과 구매가 시작됩니다.</p>
+            </article>
+        </section>
+
+        <p class="bottom-note">
+            입점 과정은 간단하게, 판매 운영은 기존 흐름을 살려 <strong>부담 없이 시작</strong>할 수 있습니다.
+        </p>
+    </main>
+</body>
+
+</html>

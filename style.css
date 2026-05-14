@@ -267,6 +267,36 @@ body {
     padding: 12px;
 }
 
+.intro-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.intro-actions .next-btn {
+    margin-top: 0;
+}
+
+.outline-btn {
+    display: block;
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    background: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.outline-btn:hover {
+    border-color: #CBD5E1;
+    background-color: #F8FAFC;
+}
+
 .submit-container {
     margin-top: 40px;
     display: none;

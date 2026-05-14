@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입점 제휴 가치 슬라이드</title>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <style>
+        :root {
+            --ink: #101828;
+            --navy: #172554;
+            --body: #475467;
+            --muted: #667085;
+            --line: #E4E7EC;
+            --blue: #2563EB;
+            --blue-deep: #1D4ED8;
+            --blue-soft: #EFF6FF;
+            --cyan-soft: #ECFEFF;
+            --green-soft: #ECFDF3;
+            --bg: #F5F8FC;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: 'Pretendard Variable', Pretendard, system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        .slide {
+            position: relative;
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            padding: 78px 96px 70px;
+            background:
+                radial-gradient(circle at 88% 8%, rgba(37, 99, 235, 0.13), transparent 28%),
+                radial-gradient(circle at 8% 92%, rgba(14, 165, 233, 0.10), transparent 30%),
+                linear-gradient(180deg, #FFFFFF 0%, #F5F8FC 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: linear-gradient(135deg, rgba(0,0,0,0.75), transparent 58%);
+        }
+
+        .copy,
+        .cards {
+            position: relative;
+            z-index: 1;
+        }
+
+        .copy {
+            width: 1680px;
+            padding-left: 28px;
+            border-left: 8px solid #5A6DFF;
+        }
+
+        h1 {
+            width: 1680px;
+            margin: 0;
+            color: #000000;
+            font-size: 60px;
+            line-height: 1.16;
+            font-weight: 950;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .lead {
+            width: 1680px;
+            margin: 24px 0 0;
+            color: #3B4656;
+            font-size: 32px;
+            line-height: 1.44;
+            font-weight: 850;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .lead strong {
+            color: #4F63FF;
+            font-weight: 950;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 34px;
+            margin-top: 58px;
+        }
+
+        .card {
+            height: 652px;
+            display: flex;
+            flex-direction: column;
+            padding: 46px 42px;
+            border: 1px solid rgba(208, 213, 221, 0.8);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 24px 70px rgba(16, 24, 40, 0.10);
+        }
+
+        .icon-wrap {
+            width: 76px;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--blue);
+            background: var(--blue-soft);
+            box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.12);
+        }
+
+        .card:nth-child(2) .icon-wrap {
+            background: var(--green-soft);
+            color: #047857;
+        }
+
+        .card:nth-child(3) .icon-wrap {
+            background: var(--cyan-soft);
+            color: #0369A1;
+        }
+
+        .icon-wrap svg {
+            width: 38px;
+            height: 38px;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card h2 {
+            margin: 34px 0 0;
+            color: var(--ink);
+            font-size: 34px;
+            line-height: 1.22;
+            font-weight: 950;
+            letter-spacing: 0;
+        }
+
+        .emphasis {
+            margin: 22px 0 0;
+            color: var(--navy);
+            font-size: 25px;
+            line-height: 1.36;
+            font-weight: 900;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .body {
+            margin: 24px 0 0;
+            color: var(--body);
+            font-size: 22px;
+            line-height: 1.48;
+            font-weight: 650;
+            letter-spacing: 0;
+            word-break: keep-all;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 38px;
+        }
+
+        .tags span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 38px;
+            padding: 0 15px;
+            border-radius: 999px;
+            color: var(--blue-deep);
+            background: #F8FAFF;
+            border: 1px solid #D6E4FF;
+            font-size: 18px;
+            font-weight: 850;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="slide" aria-label="입점 제휴 가치 슬라이드">
+        <header class="copy">
+            <h1>판매자가 부담 없이 시작하고, 안정적으로 운영할 수 있는 입점 구조</h1>
+            <p class="lead">
+                우리 몰은 단순한 노출 채널이 아니라, <strong>가격 경쟁 부담은 낮추고</strong>,
+                <strong>금융 앱의 신뢰를 더하며</strong>, 기존 운영 환경은 그대로 유지할 수 있는 판매 구조를 제공합니다.
+            </p>
+        </header>
+
+        <section class="cards" aria-label="입점 제휴 핵심 가치">
+            <article class="card">
+                <div class="icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 48 48">
+                        <path d="M11 18v18a4 4 0 0 0 4 4h18" />
+                        <path d="M11 18 24 6h13v13L19 37" />
+                        <path d="M31 12h.01" />
+                        <path d="M13 38 39 12" />
+                        <path d="M30 29h8" />
+                        <path d="M34 25v8" />
+                    </svg>
+                </div>
+                <h2>과도한 최저가 경쟁 불필요</h2>
+                <p class="emphasis">가격을 낮추는 경쟁보다, 필요한 고객에게 더 잘 맞는 노출</p>
+                <p class="body">
+                    오픈마켓처럼 과도한 최저가 경쟁이나 높은 광고비에 의존하지 않아도 됩니다.
+                    고객의 소비 맥락에 맞춰 상품이 자연스럽게 추천됩니다.
+                </p>
+                <div class="tags">
+                    <span>최저가 경쟁 불필요</span>
+                    <span>광고비 부담 감소</span>
+                    <span>추천 기반 노출</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 48 48">
+                        <path d="M24 5 39 11v12c0 10-6 17-15 20C15 40 9 33 9 23V11l15-6Z" />
+                        <path d="m17 24 5 5 10-11" />
+                    </svg>
+                </div>
+                <h2>금융 앱 기반 신뢰성</h2>
+                <p class="emphasis">신뢰할 수 있는 환경에서, 브랜드 가치를 지키며 판매</p>
+                <p class="body">
+                    금융 앱 안에서 상품이 노출되기 때문에 브랜드 신뢰도를 유지할 수 있습니다.
+                    브랜드 가치 훼손 우려와 정산 불안을 줄이고 안정적인 제휴 환경을 제공합니다.
+                </p>
+                <div class="tags">
+                    <span>브랜드 신뢰</span>
+                    <span>안정적 정산</span>
+                    <span>금융 앱 신뢰도</span>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 48 48">
+                        <path d="M8 16 24 7l16 9-16 9-16-9Z" />
+                        <path d="M8 16v16l16 9 16-9V16" />
+                        <path d="M24 25v16" />
+                        <path d="M34 9h6v6" />
+                        <path d="M40 9 30 19" />
+                        <path d="M14 39H8v-6" />
+                        <path d="M8 39l10-10" />
+                    </svg>
+                </div>
+                <h2>기존 운영 환경 그대로 연동</h2>
+                <p class="emphasis">새로운 부담 없이, 기존 방식 그대로 운영</p>
+                <p class="body">
+                    통합 운영 솔루션 연동을 통해 상품, 주문, 재고, 정산 흐름을 기존 운영 환경에서 이어갈 수 있습니다.
+                    별도 복잡한 운영 부담 없이 입점과 판매를 시작할 수 있습니다.
+                </p>
+                <div class="tags">
+                    <span>운영 솔루션 연동</span>
+                    <span>주문·재고 관리</span>
+                    <span>운영 부담 최소화</span>
+                </div>
+            </article>
+        </section>
+
+    </main>
+</body>
+
+</html>

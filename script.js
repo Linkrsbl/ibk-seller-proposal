@@ -4,8 +4,13 @@ function startForm() {
     
     // Deactivate intro UI
     const introStep = document.getElementById('step-intro');
+    const introActions = introStep.querySelector('.intro-actions');
     const startBtn = introStep.querySelector('.next-btn');
-    startBtn.style.display = 'none';
+    if (introActions) {
+        introActions.style.display = 'none';
+    } else if (startBtn) {
+        startBtn.style.display = 'none';
+    }
 
     // Activate the first form field
     const firstStep = document.getElementById('step-company');
